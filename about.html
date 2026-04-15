@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — FacilityTruth</title>
+<meta name="description" content="FacilityTruth was built by David Thomas, a financial advisor with decades of experience helping families navigate complex financial decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
+    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
+    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
+    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
+    --green:#2a7d4a;--green-lt:#edf7f0;--green-md:#b8e0c8;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --radius:10px;
+    --shadow-lg:0 8px 40px rgba(15,39,68,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--teal);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
+  .nav-cta:hover{background:var(--navy2)!important;color:var(--white)!important;}
+
+  /* HERO */
+  .about-hero{background:var(--paper);border-bottom:1px solid var(--paper2);padding:110px 2.5rem 70px;}
+  .about-hero-inner{max-width:720px;margin:0 auto;}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;}
+  .about-hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,48px);color:var(--navy);line-height:1.13;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+  .about-hero-sub{font-size:19px;color:var(--ink3);font-weight:300;line-height:1.65;max-width:580px;}
+  .about-hero-sub em{font-style:italic;color:var(--ink2);}
+
+  /* FOUNDER */
+  .founder{background:var(--white);padding:80px 2.5rem;border-bottom:1px solid var(--paper2);}
+  .founder-inner{max-width:720px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:start;}
+  .founder-avatar{width:120px;height:120px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:44px;color:var(--white);flex-shrink:0;border:3px solid var(--teal-md);font-style:italic;}
+  .founder-name{font-family:var(--serif);font-size:28px;color:var(--navy);letter-spacing:-0.01em;margin-bottom:4px;}
+  .founder-role{font-size:12px;font-weight:500;color:var(--teal);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:1.5rem;}
+  .founder-bio p{font-size:16px;color:var(--ink2);line-height:1.8;margin-bottom:1.25rem;}
+  .founder-bio p:last-child{margin-bottom:0;}
+  .founder-bio p em{font-style:italic;font-family:var(--serif);font-size:17px;color:var(--ink);}
+
+  /* PRINCIPLES */
+  .principles{background:var(--paper);padding:80px 2.5rem;border-bottom:1px solid var(--paper2);}
+  .principles-inner{max-width:720px;margin:0 auto;}
+  .principles h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .principles-sub{font-size:16px;color:var(--ink3);font-weight:300;margin-bottom:3rem;line-height:1.65;}
+  .principle-list{display:flex;flex-direction:column;gap:1.5rem;}
+  .principle-item{display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;}
+  .principle-num{font-family:var(--serif);font-size:32px;color:var(--paper3);line-height:1;font-style:italic;padding-top:2px;}
+  .principle-title{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:4px;}
+  .principle-body{font-size:15px;color:var(--ink2);line-height:1.7;}
+
+  /* METHODOLOGY */
+  .methodology{background:var(--white);padding:80px 2.5rem;border-bottom:1px solid var(--paper2);}
+  .methodology-inner{max-width:720px;margin:0 auto;}
+  .methodology h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .methodology-sub{font-size:16px;color:var(--ink3);font-weight:300;margin-bottom:2rem;line-height:1.65;}
+  .methodology-body p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:1.25rem;}
+  .methodology-body p:last-child{margin-bottom:0;}
+  .methodology-body strong{color:var(--ink);font-weight:500;}
+
+  /* DISCLAIMER */
+  .disclaimer{background:var(--paper);padding:60px 2.5rem;border-bottom:1px solid var(--paper2);}
+  .disclaimer-inner{max-width:720px;margin:0 auto;}
+  .disclaimer-box{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:2rem;}
+  .disclaimer-title{font-size:12px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;}
+  .disclaimer-body p{font-size:14px;color:var(--ink3);line-height:1.75;margin-bottom:0.75rem;}
+  .disclaimer-body p:last-child{margin-bottom:0;}
+  .disclaimer-body a{color:var(--teal);text-decoration:none;}
+  .disclaimer-body a:hover{text-decoration:underline;}
+
+  /* CTA */
+  .about-cta{background:var(--navy);padding:80px 2.5rem;}
+  .about-cta-inner{max-width:560px;margin:0 auto;text-align:center;}
+  .about-cta h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:var(--white);letter-spacing:-0.02em;margin-bottom:1rem;}
+  .about-cta p{font-size:16px;color:rgba(255,255,255,0.5);font-weight:300;margin-bottom:2.5rem;line-height:1.65;}
+  .btn-cta{background:var(--teal);color:var(--white);padding:15px 34px;border-radius:var(--radius);font-size:16px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s;}
+  .btn-cta:hover{background:var(--teal2);transform:translateY(-1px);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .founder-inner{grid-template-columns:1fr;}
+    .founder-avatar{width:80px;height:80px;font-size:30px;}
+    .principle-item{grid-template-columns:1fr;}
+    .principle-num{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="red-flags.html">Red flags</a></li>
+    <li><a href="sample-report.html">Sample report</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="about-hero-inner">
+    <div class="section-label">About FacilityTruth</div>
+    <h1>Built by someone who has spent a career reading the fine print for families.</h1>
+    <p class="about-hero-sub">FacilityTruth exists because <em>assisted living contracts are written for facilities — not for the families who sign them.</em> We think that's worth fixing.</p>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="founder-inner">
+    <div class="founder-avatar">D</div>
+    <div>
+      <div class="founder-name">David Thomas</div>
+      <div class="founder-role">Founder, FacilityTruth</div>
+      <div class="founder-bio">
+        <p>I've spent decades as a financial advisor helping families navigate some of the most consequential financial decisions of their lives — reading complex documents, identifying hidden risks, and making sure the people I work with understand exactly what they're agreeing to before they sign anything.</p>
+        <p>When someone in my life faced placing a parent in assisted living, I sat down with the contract they'd been handed. What I found stunned me. Uncapped rate escalation. A binding arbitration waiver buried in an exhibit. A discharge clause so vague it gave the facility unlimited discretion to remove a resident with almost no notice. Provisions that would have cost this family tens of thousands of dollars over time — in a document they were expected to sign that afternoon, under enormous emotional pressure, with no one to help them understand it.</p>
+        <p>I looked for a resource that could help families the way I was helping this one. I couldn't find one at a price regular families could access. So I built it.</p>
+        <p>FacilityTruth is the resource I wished had existed. A plain-English analysis of the contract you're about to sign and an honest look at the facility's track record — so you can walk into that admissions office knowing exactly what you're agreeing to, and exactly what to push back on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="principles-inner">
+    <div class="section-label">What we stand for</div>
+    <h2>Three principles we don't compromise on</h2>
+    <p class="principles-sub">These aren't marketing language. They're the decisions we made when we built this product and the commitments we hold ourselves to every day.</p>
+    <div class="principle-list">
+      <div class="principle-item">
+        <div class="principle-num">1</div>
+        <div>
+          <div class="principle-title">We are entirely on the family's side</div>
+          <div class="principle-body">FacilityTruth has no financial relationship with any assisted living facility, placement agency, or elder law firm. We do not accept referral fees. We do not have affiliate arrangements. We do not send families to attorneys or services in exchange for compensation of any kind. The $99 you pay us is the only money we make from your transaction — and it comes entirely from you, not from anyone with an interest in where your parent lives.</div>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-num">2</div>
+        <div>
+          <div class="principle-title">We say what we find, not what is comfortable</div>
+          <div class="principle-body">If a contract has serious problems, we say so clearly. If a facility's inspection record is poor, we report it plainly. We do not soften findings to avoid upsetting anyone. Families making decisions of this magnitude deserve complete, honest information — even when it's difficult to read. Our job is to inform, not to reassure.</div>
+        </div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-num">3</div>
+        <div>
+          <div class="principle-title">We are transparent about what we are and what we aren't</div>
+          <div class="principle-body">FacilityTruth provides informational analysis. We explain what contract language means. We summarize publicly available facility data. We do not provide legal advice, and we never claim to. When a situation warrants an elder law attorney, we say so explicitly — and we tell you how to find one. We would rather lose a sale than mislead a family about what our product can and cannot do.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="methodology">
+  <div class="methodology-inner">
+    <div class="section-label">Our methodology</div>
+    <h2>How we build every report</h2>
+    <p class="methodology-sub">What's behind the analysis — in plain English.</p>
+    <div class="methodology-body">
+      <p>Our contract analysis framework was developed through review of hundreds of real assisted living contracts — including agreements from the largest national chains, regional operators, and independent facilities across our ten covered states. The framework identifies specific clause patterns, language structures, and missing provisions that consistently appear in contracts that create problems for families.</p>
+      <p>Every flagged clause is cited by its exact article and section number so you can find and verify it in your own contract. We intentionally show you the source language alongside our plain-English explanation — because <strong>we want you to be able to check our work.</strong></p>
+      <p>Facility data comes from two primary sources. Medicare's Care Compare database — maintained by the Centers for Medicare and Medicaid Services — provides star ratings, staffing ratios, quality measures, and federal penalty history for every Medicare-certified facility in the country. State health department inspection records provide citation history at the state level, where our system retrieves and summarizes the findings that matter most to families.</p>
+      <p>We update our clause framework regularly as new contract patterns emerge and as case law and regulatory changes affect what families should watch for. The Sunrise Senior Living class action settlement in December 2024 — $18.2 million, driven by staffing representation claims — is one example of how industry litigation directly informs what we flag.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer">
+  <div class="disclaimer-inner">
+    <div class="disclaimer-box">
+      <div class="disclaimer-title">Important — please read</div>
+      <div class="disclaimer-body">
+        <p>FacilityTruth provides informational reports only. Nothing on this website or in any FacilityTruth report constitutes legal advice, financial advice, or medical advice. Our reports explain contract language and summarize publicly available facility data. They do not constitute a legal determination that any contract clause is enforceable or unenforceable, and they do not represent the opinion of a licensed attorney.</p>
+        <p>For legal questions about a specific contract or your rights under your state's laws, we recommend consulting a qualified elder law attorney. The National Academy of Elder Law Attorneys maintains a directory of qualified practitioners at <a href="https://www.naela.org" target="_blank" rel="noopener">naela.org</a>.</p>
+        <p>FacilityTruth is not affiliated with, endorsed by, or connected to any assisted living facility, national chain, placement agency, or government agency. Facility data presented in our reports is sourced from publicly available government databases and is provided for informational purposes only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <div class="about-cta-inner">
+    <h2>Know before you sign.</h2>
+    <p>Upload your contract and facility name. Your complete plain-English report arrives within 30 minutes.</p>
+    <a href="index.html#get-report" class="btn-cta">
+      Get your report — $99
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+</body>
+</html>

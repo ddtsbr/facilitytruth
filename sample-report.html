@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report — FacilityTruth</title>
+<meta name="description" content="See exactly what a FacilityTruth report looks like. A complete plain-English analysis of an assisted living contract and facility track record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
+    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
+    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
+    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
+    --red:#b83232;--red-lt:#fdf0f0;--red-md:#f5c6c6;
+    --amber:#c47820;--amber-lt:#fef7ed;--amber-md:#f5dba0;
+    --green:#2a7d4a;--green-lt:#edf7f0;--green-md:#b8e0c8;
+    --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+    --radius:10px;--shadow:0 2px 16px rgba(15,39,68,0.07);--shadow-lg:0 8px 40px rgba(15,39,68,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--teal);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
+
+  .page-header{background:var(--white);border-bottom:1px solid var(--paper2);padding:100px 2.5rem 50px;}
+  .page-header-inner{max-width:900px;margin:0 auto;}
+  .breadcrumb{font-size:13px;color:var(--ink3);margin-bottom:1rem;display:flex;align-items:center;gap:6px;}
+  .breadcrumb a{color:var(--teal);text-decoration:none;}
+  .sample-notice{display:inline-flex;align-items:center;gap:8px;background:var(--amber-lt);border:1px solid var(--amber-md);color:var(--amber);font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:1.5rem;}
+  .page-header h1{font-family:var(--serif);font-size:clamp(28px,4vw,46px);color:var(--navy);line-height:1.15;letter-spacing:-0.02em;margin-bottom:1rem;}
+  .page-header-sub{font-size:17px;color:var(--ink3);font-weight:300;max-width:580px;line-height:1.65;}
+
+  .report-layout{max-width:960px;margin:0 auto;padding:3rem 2.5rem 6rem;display:grid;grid-template-columns:210px 1fr;gap:3rem;align-items:start;}
+
+  .report-nav{position:sticky;top:90px;}
+  .report-nav-title{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.875rem;}
+  .report-nav ul{list-style:none;display:flex;flex-direction:column;gap:2px;}
+  .report-nav a{display:block;font-size:13px;color:var(--ink3);text-decoration:none;padding:5px 10px;border-left:2px solid var(--paper3);transition:color 0.2s,border-color 0.2s;line-height:1.4;}
+  .report-nav a:hover{color:var(--navy);border-color:var(--teal);}
+  .report-nav-cta{margin-top:2rem;background:var(--navy);color:var(--white);padding:12px 16px;border-radius:var(--radius);font-size:14px;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:background 0.2s;}
+  .report-nav-cta:hover{background:var(--navy2);}
+
+  .report-cover{background:var(--navy);border-radius:14px;padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden;}
+  .report-cover::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(26,158,138,0.15) 0%,transparent 65%);pointer-events:none;}
+  .cover-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
+  .cover-brand{font-family:var(--serif);font-size:18px;color:var(--white);letter-spacing:-0.01em;}
+  .cover-brand span{color:var(--teal2);}
+  .cover-date{font-size:12px;color:rgba(255,255,255,0.4);}
+  .cover-facility-name{font-family:var(--serif);font-size:26px;color:var(--white);line-height:1.2;margin-bottom:4px;}
+  .cover-facility-loc{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;}
+  .cover-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .cover-score-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:1rem;}
+  .cover-score-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;}
+  .cover-score-val{font-family:var(--serif);font-size:26px;color:var(--white);line-height:1;margin-bottom:4px;}
+  .score-high{color:#f4a0a0;}
+  .score-mid{color:#fcd577;}
+  .score-low{color:#86d9b0;}
+  .cover-disclaimer{font-size:11px;color:rgba(255,255,255,0.22);margin-top:1.5rem;line-height:1.55;border-top:1px solid rgba(255,255,255,0.08);padding-top:1rem;}
+
+  .report-section{margin-bottom:2.5rem;}
+  .rs-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;padding-bottom:0.875rem;border-bottom:1px solid var(--paper2);}
+  .rs-num{width:28px;height:28px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;}
+  .rs-title{font-family:var(--serif);font-size:20px;color:var(--navy);letter-spacing:-0.01em;}
+
+  .summary-box{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;}
+  .summary-box p{font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:0.75rem;}
+  .summary-box p:last-child{margin-bottom:0;}
+  .summary-box strong{color:var(--ink);font-weight:500;}
+
+  .flag-card{border-radius:var(--radius);border:1px solid;margin-bottom:1rem;overflow:hidden;}
+  .flag-card-red{border-color:var(--red-md);background:var(--red-lt);}
+  .flag-card-amber{border-color:var(--amber-md);background:var(--amber-lt);}
+  .flag-card-green{border-color:var(--green-md);background:var(--green-lt);}
+  .flag-card-header{display:flex;align-items:center;gap:10px;padding:0.875rem 1.25rem;border-bottom:1px solid;}
+  .flag-card-red .flag-card-header{border-color:var(--red-md);}
+  .flag-card-amber .flag-card-header{border-color:var(--amber-md);}
+  .flag-card-green .flag-card-header{border-color:var(--green-md);}
+  .flag-badge{font-size:10px;font-weight:500;padding:3px 9px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase;flex-shrink:0;}
+  .badge-red{background:var(--red);color:var(--white);}
+  .badge-amber{background:var(--amber);color:var(--white);}
+  .badge-green{background:var(--green);color:var(--white);}
+  .flag-card-title{font-size:14px;font-weight:500;color:var(--navy);}
+  .flag-card-ref{font-size:11px;color:var(--ink3);margin-left:auto;flex-shrink:0;font-family:monospace;background:rgba(255,255,255,0.6);padding:2px 6px;border-radius:4px;}
+  .flag-card-body{padding:1.25rem;}
+  .flag-clause{font-size:13px;color:var(--ink2);font-style:italic;background:rgba(255,255,255,0.6);border-left:3px solid;padding:0.75rem 1rem;border-radius:0 6px 6px 0;margin-bottom:1rem;line-height:1.6;}
+  .flag-card-red .flag-clause{border-color:var(--red);}
+  .flag-card-amber .flag-clause{border-color:var(--amber);}
+  .flag-card-green .flag-clause{border-color:var(--green);}
+  .flag-explain{font-size:14px;color:var(--ink2);line-height:1.65;margin-bottom:0.75rem;}
+  .flag-explain:last-child{margin-bottom:0;}
+  .flag-explain strong{color:var(--ink);font-weight:500;}
+  .flag-action{display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,0.7);border-radius:6px;padding:0.75rem 1rem;margin-top:0.75rem;font-size:13px;color:var(--ink2);line-height:1.55;}
+  .flag-action-label{font-weight:500;color:var(--navy);flex-shrink:0;}
+
+  .facility-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;}
+  .facility-score-card{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1rem;text-align:center;}
+  .fsc-val{font-family:var(--serif);font-size:28px;color:var(--navy);line-height:1;margin-bottom:4px;}
+  .fsc-label{font-size:12px;color:var(--ink3);line-height:1.4;}
+  .fsc-sub{font-size:11px;color:var(--ink3);margin-top:2px;}
+  .stars{color:var(--amber);}
+  .stars-off{color:var(--paper3);}
+
+  .inspection-item{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.1rem 1.25rem;margin-bottom:0.75rem;display:grid;grid-template-columns:70px 1fr auto;gap:1rem;align-items:start;}
+  .insp-date{font-size:12px;color:var(--ink3);white-space:nowrap;padding-top:2px;}
+  .insp-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:3px;}
+  .insp-desc{font-size:13px;color:var(--ink3);line-height:1.5;}
+  .insp-severity{font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
+  .sev-d{background:var(--red-lt);color:var(--red);}
+  .sev-c{background:var(--amber-lt);color:var(--amber);}
+  .sev-b{background:var(--green-lt);color:var(--green);}
+
+  .negotiation-item{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.25rem;margin-bottom:0.875rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+  .neg-num{width:26px;height:26px;background:var(--teal-lt);color:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;}
+  .neg-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:4px;}
+  .neg-script{font-size:13px;font-style:italic;color:var(--ink2);background:var(--paper);border-left:3px solid var(--teal-md);padding:0.6rem 0.875rem;border-radius:0 6px 6px 0;margin-top:0.5rem;line-height:1.6;}
+
+  .risk-summary{background:var(--white);border:1px solid var(--paper2);border-radius:14px;padding:2rem;margin-bottom:1.5rem;}
+  .risk-meter{height:8px;background:linear-gradient(to right,var(--green),var(--amber),var(--red));border-radius:100px;margin:1rem 0 0.5rem;position:relative;}
+  .risk-marker{width:16px;height:16px;background:var(--navy);border:2px solid var(--white);border-radius:50%;position:absolute;top:50%;transform:translate(-50%,-50%);left:80%;box-shadow:0 1px 4px rgba(0,0,0,0.2);}
+  .risk-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);}
+  .risk-counts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+  .risk-count{text-align:center;}
+  .risk-count-num{font-family:var(--serif);font-size:32px;line-height:1;margin-bottom:4px;}
+  .risk-count-lbl{font-size:12px;color:var(--ink3);}
+  .num-red{color:var(--red);}
+  .num-amber{color:var(--amber);}
+  .num-green{color:var(--green);}
+
+  .report-cta{background:var(--navy);border-radius:14px;padding:2.5rem;text-align:center;margin-top:3rem;}
+  .report-cta h3{font-family:var(--serif);font-size:24px;color:var(--white);margin-bottom:0.75rem;}
+  .report-cta p{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;font-weight:300;}
+  .btn-cta{background:var(--teal);color:var(--white);padding:15px 32px;border-radius:var(--radius);font-size:16px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s;}
+  .btn-cta:hover{background:var(--teal2);transform:translateY(-1px);}
+
+  @media(max-width:740px){
+    .report-layout{grid-template-columns:1fr;}
+    .report-nav{display:none;}
+    .cover-scores{grid-template-columns:1fr 1fr;}
+    .inspection-item{grid-template-columns:1fr;gap:0.5rem;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="red-flags.html">Red flags</a></li>
+    <li><a href="sample-report.html">Sample report</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Sample report
+    </div>
+    <div class="sample-notice">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 5v3M6 4v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      Sample only — facility and names are fictitious
+    </div>
+    <h1>What your report looks like</h1>
+    <p class="page-header-sub">This is a complete FacilityTruth report based on a real contract structure. Every section below is included in your $99 report — delivered as a PDF within 30 minutes of purchase.</p>
+  </div>
+</div>
+
+<div class="report-layout">
+
+  <aside class="report-nav">
+    <div class="report-nav-title">In this report</div>
+    <ul>
+      <li><a href="#cover">Overview &amp; risk score</a></li>
+      <li><a href="#contract">Contract analysis</a></li>
+      <li><a href="#facility">Facility track record</a></li>
+      <li><a href="#negotiation">Negotiation guide</a></li>
+      <li><a href="#summary">Summary &amp; next steps</a></li>
+    </ul>
+    <a href="index.html#get-report" class="report-nav-cta">
+      Get your report — $99
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </aside>
+
+  <div class="report-doc">
+
+    <!-- COVER -->
+    <div class="report-cover" id="cover">
+      <div class="cover-top">
+        <div class="cover-brand">Facility<span>Truth</span> Report</div>
+        <div class="cover-date">Report date: April 14, 2026</div>
+      </div>
+      <div class="cover-facility-name">Maplewood Senior Living — Springfield, IL</div>
+      <div class="cover-facility-loc">123 Elm Street · Springfield, Illinois 62701 · Medicare ID: 145892</div>
+      <div class="cover-scores">
+        <div class="cover-score-card">
+          <div class="cover-score-label">Contract risk</div>
+          <div class="cover-score-val score-high">High</div>
+          <div style="font-size:12px;" class="score-high">3 red flags found</div>
+        </div>
+        <div class="cover-score-card">
+          <div class="cover-score-label">Medicare rating</div>
+          <div class="cover-score-val score-mid">2 / 5</div>
+          <div style="font-size:12px;" class="score-mid">Below average</div>
+        </div>
+        <div class="cover-score-card">
+          <div class="cover-score-label">Inspection record</div>
+          <div class="cover-score-val score-high">Poor</div>
+          <div style="font-size:12px;" class="score-high">7 citations in 3 years</div>
+        </div>
+      </div>
+      <div class="cover-disclaimer">This report is informational only and does not constitute legal or financial advice. FacilityTruth analyzes publicly available facility data and the contract text provided. We recommend consulting a qualified elder law attorney before signing any assisted living agreement.</div>
+    </div>
+
+    <!-- CONTRACT ANALYSIS -->
+    <div class="report-section" id="contract">
+      <div class="rs-header">
+        <div class="rs-num">1</div>
+        <div class="rs-title">Contract analysis</div>
+      </div>
+      <div class="summary-box">
+        <p>We reviewed the 24-page Maplewood Senior Living Residency Agreement dated March 2026. The contract contains <strong>3 significant red flags</strong>, <strong>4 items to watch</strong>, and <strong>3 clauses worth negotiating</strong> before signing.</p>
+        <p>The most serious issues are an uncapped rate escalation clause with no annual limit, a mandatory pre-dispute arbitration waiver in Exhibit D, and a rapid discharge provision giving the facility broad discretion to remove a resident with as few as 5 days notice.</p>
+      </div>
+
+      <div class="flag-card flag-card-red">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-red">Red flag</span>
+          <div class="flag-card-title">Uncapped rate escalation — no annual limit</div>
+          <div class="flag-card-ref">Article IV, Sec. B</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"The Facility reserves the right to adjust the Monthly Service Fee upon thirty (30) days prior written notice to Resident or Resident's Representative. Rate adjustments are not limited in frequency or amount and may occur at any time."</div>
+          <p class="flag-explain">This clause gives Maplewood unlimited ability to raise your monthly rate — with only 30 days warning and no cap on how much or how often. A family paying $4,200/month today could legally be charged $6,500/month within a year with no recourse other than moving out.</p>
+          <p class="flag-explain"><strong>Industry context:</strong> Responsible facilities cap annual increases at CPI + 2–3%, or a fixed percentage such as 5% per year. This contract has no such protection.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> A written addendum capping annual rate increases at the lesser of 5% or CPI for the Illinois metro area. Many facilities will agree, particularly if occupancy is below capacity.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-red">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-red">Red flag</span>
+          <div class="flag-card-title">Mandatory pre-dispute arbitration waiver</div>
+          <div class="flag-card-ref">Article IX, Sec. A — Exhibit D</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"Any and all disputes, controversies or claims arising out of or relating to this Agreement shall be resolved exclusively by binding arbitration... Resident and Facility expressly waive any right to trial by jury or judge."</div>
+          <p class="flag-explain">By signing as written, your family permanently gives up the right to sue Maplewood in court — including the right to join a class action lawsuit. All disputes are decided by a private arbitrator, not a judge or jury.</p>
+          <p class="flag-explain"><strong>Why this matters:</strong> In 2024, Sunrise Senior Living settled a class action for $18.2 million. Families who had signed the arbitration waiver were excluded from the settlement entirely.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> Removal of Exhibit D before signing. If the facility refuses, request that it be optional and that you have 30 days after signing to withdraw in writing. Consult an elder law attorney on your specific Illinois rights.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-red">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-red">Red flag</span>
+          <div class="flag-card-title">Broad discharge authority — 5-day notice</div>
+          <div class="flag-card-ref">Article VII, Sec. C.2</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"The Facility may terminate this Agreement and discharge Resident upon five (5) days written notice in the event of behaviors determined by Facility management, in its sole discretion, to pose a risk to the safety, well-being, or comfort of other residents or staff."</div>
+          <p class="flag-explain">The phrase "in its sole discretion" means Maplewood — not an independent reviewer, not a physician — decides whether a behavior is a "risk to comfort." That standard is vague enough to justify almost any discharge decision. Five days is also an extremely short window to arrange alternative placement for a vulnerable adult.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> Amendment requiring (1) a licensed professional's written clinical assessment before behavioral discharge, (2) a minimum 30-day notice period, and (3) a documented appeals process.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-amber">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-amber">Watch</span>
+          <div class="flag-card-title">Level of care increases — facility-determined, no appeal</div>
+          <div class="flag-card-ref">Article IV, Sec. D</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"Resident's level of care shall be assessed by Facility nursing staff on a quarterly basis or more frequently as clinically indicated. Level of care tier and associated fees may be adjusted at the Facility's discretion based on assessment findings."</div>
+          <p class="flag-explain">The facility's own staff conducts the assessments that determine how much you pay. No third-party review or appeals process is described anywhere in this contract.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask:</span> What is the process for requesting an independent review if we disagree with a care level assessment? Get the answer in writing as a signed addendum.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-amber">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-amber">Watch</span>
+          <div class="flag-card-title">Full payment required during hospitalization</div>
+          <div class="flag-card-ref">Article IV, Sec. F</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"Resident shall remain financially responsible for the full Monthly Service Fee during any temporary absence from the Facility, including but not limited to hospitalization, rehabilitation, or skilled nursing transfer."</div>
+          <p class="flag-explain">If your parent is hospitalized for 3 weeks, you pay full rent at Maplewood for all 3 weeks — simultaneously with hospital costs not covered by Medicare. Some facilities offer a reduced bed hold rate of 50–75% during stays over 7 days. This contract offers none.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> A reduced bed hold rate — typically 50–75% of monthly fee — for hospital stays exceeding 7 days.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-amber">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-amber">Watch</span>
+          <div class="flag-card-title">Ancillary supply markup — cost plus 15%</div>
+          <div class="flag-card-ref">Article V, Sec. B — Exhibit C</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"Supplies and materials provided by the Facility beyond those included in the base service rate, including incontinence products, wound care materials, and medical supplies, shall be billed at the Facility's cost plus fifteen percent (15%)."</div>
+          <p class="flag-explain">A 15% markup is higher than the 10% we consider standard. For a resident requiring regular incontinence and wound care, ancillary costs can reach $300–400/month — meaning the extra 5% markup adds $15–20/month over industry standard.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> Monthly itemized statements for all ancillary charges, and consider requesting the markup be reduced to 10% or that you be allowed to purchase supplies through an outside pharmacy.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-amber">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-amber">Watch</span>
+          <div class="flag-card-title">Community fee — $3,000, non-refundable after 14 days</div>
+          <div class="flag-card-ref">Article III, Sec. A</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"A non-refundable Community Fee of Three Thousand Dollars ($3,000) is due upon execution of this Agreement. After the fourteen (14) day rescission period, this fee is fully earned and non-refundable under all circumstances."</div>
+          <p class="flag-explain">Fourteen days is a short window to decide whether this facility is the right fit. The $3,000 amount is also on the higher end of the typical $500–$3,500 range. Once the window closes, this money is gone regardless of outcome.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask for:</span> Extension of the rescission period to 30 days, and/or a reduction of the community fee. Both are commonly negotiated for private-pay residents.</div>
+        </div>
+      </div>
+
+      <div class="flag-card flag-card-green">
+        <div class="flag-card-header">
+          <span class="flag-badge badge-green">Negotiate</span>
+          <div class="flag-card-title">Medication management fee — $180/month</div>
+          <div class="flag-card-ref">Article V, Sec. A — Exhibit C, Line 4</div>
+        </div>
+        <div class="flag-card-body">
+          <div class="flag-clause">"Medication management services, including storage, administration, and documentation, shall be provided at an additional monthly fee of One Hundred Eighty Dollars ($180) per month."</div>
+          <p class="flag-explain">$180/month is at the high end of the typical $75–$200 range. This fee is listed as standard but is frequently reduced for residents who self-administer most medications and require minimal staff involvement.</p>
+          <div class="flag-action"><span class="flag-action-label">Ask:</span> Whether the medication management fee can be reduced given the resident's level of independence with medications.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FACILITY TRACK RECORD -->
+    <div class="report-section" id="facility">
+      <div class="rs-header">
+        <div class="rs-num">2</div>
+        <div class="rs-title">Facility track record</div>
+      </div>
+      <div class="summary-box">
+        <p>Maplewood Senior Living holds a <strong>2-star overall Medicare rating</strong> — below average nationally. The facility's lowest score is in <strong>health inspections (1 star)</strong>, driven by repeated citations for medication administration errors and inadequate care planning over the past 36 months.</p>
+        <p>Staffing ratios are slightly below the Illinois state average. There are no federal penalty fines or payment denials on record in the past 3 years.</p>
+      </div>
+      <div class="facility-scores">
+        <div class="facility-score-card">
+          <div class="fsc-val"><span class="stars">★★</span><span class="stars-off">★★★</span></div>
+          <div class="fsc-label">Overall Medicare rating</div>
+          <div class="fsc-sub">Below average</div>
+        </div>
+        <div class="facility-score-card">
+          <div class="fsc-val"><span class="stars">★</span><span class="stars-off">★★★★</span></div>
+          <div class="fsc-label">Health inspections</div>
+          <div class="fsc-sub">Much below average</div>
+        </div>
+        <div class="facility-score-card">
+          <div class="fsc-val"><span class="stars">★★★</span><span class="stars-off">★★</span></div>
+          <div class="fsc-label">Staffing ratio</div>
+          <div class="fsc-sub">Average</div>
+        </div>
+        <div class="facility-score-card">
+          <div class="fsc-val"><span class="stars">★★★</span><span class="stars-off">★★</span></div>
+          <div class="fsc-label">Quality measures</div>
+          <div class="fsc-sub">Average</div>
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:1rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">State inspection citations — last 36 months</p>
+
+      <div class="inspection-item">
+        <div class="insp-date">Jan 2026</div>
+        <div class="insp-body">
+          <div class="insp-title">Medication administration error — failure to follow physician orders</div>
+          <div class="insp-desc">State surveyors cited the facility for administering incorrect dosages of blood pressure medication to 2 residents over a 3-week period. This is the second medication citation in 24 months.</div>
+        </div>
+        <div class="insp-severity sev-d">Severity D</div>
+      </div>
+      <div class="inspection-item">
+        <div class="insp-date">Aug 2025</div>
+        <div class="insp-body">
+          <div class="insp-title">Inadequate care plan — failure to update after change in condition</div>
+          <div class="insp-desc">Following a resident fall resulting in a hip fracture, surveyors found the facility failed to update the resident's care plan for 11 days. State regulations require updates within 48 hours of a significant change.</div>
+        </div>
+        <div class="insp-severity sev-d">Severity D</div>
+      </div>
+      <div class="inspection-item">
+        <div class="insp-date">Mar 2025</div>
+        <div class="insp-body">
+          <div class="insp-title">Staffing — inadequate coverage during overnight shift</div>
+          <div class="insp-desc">Surveyors documented two overnight shifts where staffing fell below the minimum required ratio under Illinois Administrative Code. The facility submitted a plan of correction accepted by the state.</div>
+        </div>
+        <div class="insp-severity sev-c">Severity C</div>
+      </div>
+      <div class="inspection-item">
+        <div class="insp-date">Nov 2024</div>
+        <div class="insp-body">
+          <div class="insp-title">Medication storage — improper temperature controls</div>
+          <div class="insp-desc">Medications requiring refrigeration were found stored above required temperature range on two occasions. No resident harm was documented.</div>
+        </div>
+        <div class="insp-severity sev-b">Severity B</div>
+      </div>
+      <div class="inspection-item">
+        <div class="insp-date">Jun 2024</div>
+        <div class="insp-body">
+          <div class="insp-title">Resident rights — failure to provide advance notice of room change</div>
+          <div class="insp-desc">One resident was moved to a different room without the required 30-day written notice. The facility acknowledged the error and compensated the resident for moving costs.</div>
+        </div>
+        <div class="insp-severity sev-b">Severity B</div>
+      </div>
+    </div>
+
+    <!-- NEGOTIATION GUIDE -->
+    <div class="report-section" id="negotiation">
+      <div class="rs-header">
+        <div class="rs-num">3</div>
+        <div class="rs-title">Negotiation guide</div>
+      </div>
+      <div class="summary-box">
+        <p>These are specific requests to make — in priority order — before signing. They are reasonable, commonly accepted requests that families successfully negotiate every day. Approach the admissions coordinator calmly and confirm any agreed changes in writing as a signed addendum.</p>
+      </div>
+
+      <div class="negotiation-item">
+        <div class="neg-num">1</div>
+        <div>
+          <div class="neg-title">Request removal of the arbitration agreement (Exhibit D)</div>
+          <div class="neg-script">"We'd like to discuss Exhibit D — the arbitration agreement. We're not comfortable waiving our right to court access. Can we proceed without signing it, or is there a version that makes it optional?"</div>
+        </div>
+      </div>
+      <div class="negotiation-item">
+        <div class="neg-num">2</div>
+        <div>
+          <div class="neg-title">Request a written annual rate increase cap</div>
+          <div class="neg-script">"We noticed the agreement doesn't limit annual rate increases. We'd like to add an addendum capping increases at 5% per year or CPI, whichever is lower. Is that something the facility can accommodate?"</div>
+        </div>
+      </div>
+      <div class="negotiation-item">
+        <div class="neg-num">3</div>
+        <div>
+          <div class="neg-title">Request a reduced bed hold rate during hospitalization</div>
+          <div class="neg-script">"We'd like to understand the policy if our parent needs to be hospitalized. Is there a reduced hold rate for stays beyond 7 days, rather than the full monthly fee?"</div>
+        </div>
+      </div>
+      <div class="negotiation-item">
+        <div class="neg-num">4</div>
+        <div>
+          <div class="neg-title">Request an independent appeals process for care assessments</div>
+          <div class="neg-script">"If we ever disagree with a care level assessment, what is the process for requesting an independent review? We'd like that process documented in the agreement."</div>
+        </div>
+      </div>
+      <div class="negotiation-item">
+        <div class="neg-num">5</div>
+        <div>
+          <div class="neg-title">Ask about the inspection record directly</div>
+          <div class="neg-script">"We noticed some medication-related citations in the state inspection history from 2024 and 2026. Can you walk us through what happened and what changes were made as a result?"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="report-section" id="summary">
+      <div class="rs-header">
+        <div class="rs-num">4</div>
+        <div class="rs-title">Summary and next steps</div>
+      </div>
+      <div class="risk-summary">
+        <p style="font-size:12px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Overall risk rating</p>
+        <p style="font-family:var(--serif);font-size:36px;color:var(--red);line-height:1;margin-bottom:0.5rem;">High</p>
+        <p style="font-size:14px;color:var(--ink3);margin-bottom:1rem;">This contract and facility combination carries meaningful risk. The arbitration waiver and uncapped rate escalation clause alone warrant attention. The facility's inspection record — particularly repeated medication citations — adds to the overall concern.</p>
+        <div class="risk-meter"><div class="risk-marker"></div></div>
+        <div class="risk-labels"><span>Low</span><span>Moderate</span><span>High</span></div>
+        <div class="risk-counts">
+          <div class="risk-count"><div class="risk-count-num num-red">3</div><div class="risk-count-lbl">Red flags</div></div>
+          <div class="risk-count"><div class="risk-count-num num-amber">4</div><div class="risk-count-lbl">Watch items</div></div>
+          <div class="risk-count"><div class="risk-count-num num-green">3</div><div class="risk-count-lbl">Negotiable items</div></div>
+        </div>
+      </div>
+      <div class="summary-box">
+        <p><strong>A high rating does not mean you shouldn't choose this facility.</strong> It means the agreement as written needs attention before you sign — not that the facility is necessarily the wrong choice. The quality of day-to-day care is often not fully captured in contract language or inspection records.</p>
+        <p>Use the negotiation guide above. Get any agreed changes in writing as a signed addendum. For the arbitration clause specifically, a brief consultation with an Illinois elder law attorney is worth the cost given what's at stake.</p>
+        <p>To find a qualified elder law attorney in your area, visit the National Academy of Elder Law Attorneys directory at <strong>naela.org</strong>.</p>
+      </div>
+    </div>
+
+    <div class="report-cta">
+      <h3>Ready to analyze your contract?</h3>
+      <p>Upload your contract and facility name. Your full report arrives within 30 minutes.</p>
+      <a href="index.html#get-report" class="btn-cta">
+        Get your report — $99
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

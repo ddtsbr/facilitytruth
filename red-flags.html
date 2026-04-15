@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assisted Living Contract Red Flags — FacilityTruth</title>
+<meta name="description" content="A complete plain-English guide to the contract clauses that cost families the most. Know what to look for before you sign an assisted living agreement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
+    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
+    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
+    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
+    --red:#b83232;--red-lt:#fdf0f0;--red-md:#f5c6c6;
+    --amber:#c47820;--amber-lt:#fef7ed;--amber-md:#f5dba0;
+    --green:#2a7d4a;--green-lt:#edf7f0;--green-md:#b8e0c8;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --radius:10px;
+    --shadow:0 2px 16px rgba(15,39,68,0.07);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--teal);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
+  .nav-cta:hover{background:var(--navy2)!important;color:var(--white)!important;}
+
+  /* PAGE HEADER */
+  .page-header{background:var(--paper);border-bottom:1px solid var(--paper2);padding:100px 2.5rem 60px;}
+  .page-header-inner{max-width:860px;margin:0 auto;}
+  .breadcrumb{font-size:13px;color:var(--ink3);margin-bottom:1rem;display:flex;align-items:center;gap:6px;}
+  .breadcrumb a{color:var(--teal);text-decoration:none;}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;}
+  .page-header h1{font-family:var(--serif);font-size:clamp(28px,4vw,50px);color:var(--navy);line-height:1.13;letter-spacing:-0.02em;margin-bottom:1rem;}
+  .page-header-sub{font-size:18px;color:var(--ink3);font-weight:300;max-width:620px;line-height:1.65;margin-bottom:2rem;}
+  .header-meta{display:flex;gap:2rem;flex-wrap:wrap;}
+  .header-meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink3);}
+  .header-meta-dot{width:8px;height:8px;border-radius:50%;}
+
+  /* LAYOUT */
+  .library-layout{max-width:1060px;margin:0 auto;padding:3rem 2.5rem 6rem;display:grid;grid-template-columns:220px 1fr;gap:4rem;align-items:start;}
+
+  /* STICKY TOC */
+  .toc{position:sticky;top:90px;}
+  .toc-title{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;}
+  .toc-section{margin-bottom:1.25rem;}
+  .toc-section-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.4rem;padding-left:10px;}
+  .toc ul{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc a{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink3);text-decoration:none;padding:5px 10px;border-left:2px solid var(--paper3);border-radius:0 4px 4px 0;transition:color 0.2s,border-color 0.2s,background 0.2s;line-height:1.4;}
+  .toc a:hover{color:var(--navy);border-color:var(--teal);background:var(--paper);}
+  .toc-pip{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .pip-r{background:var(--red);}
+  .pip-a{background:var(--amber);}
+  .pip-g{background:var(--green);}
+  .toc-cta{margin-top:2rem;background:var(--navy);color:var(--white);padding:12px 16px;border-radius:var(--radius);font-size:14px;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:background 0.2s;}
+  .toc-cta:hover{background:var(--navy2);}
+
+  /* CONTENT */
+  .library-content{}
+
+  /* INTRO CALLOUT */
+  .intro-callout{background:var(--teal-lt);border:1px solid var(--teal-md);border-radius:14px;padding:1.75rem;margin-bottom:3rem;}
+  .intro-callout p{font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:0.75rem;}
+  .intro-callout p:last-child{margin-bottom:0;}
+  .intro-callout strong{color:var(--ink);font-weight:500;}
+
+  /* FLAG GROUP */
+  .flag-group{margin-bottom:3.5rem;}
+  .flag-group-header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--paper2);}
+  .flag-group-pip{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+  .flag-group-title{font-family:var(--serif);font-size:24px;color:var(--navy);letter-spacing:-0.01em;}
+  .flag-group-count{font-size:13px;color:var(--ink3);margin-left:auto;}
+
+  /* INDIVIDUAL FLAG ENTRY */
+  .flag-entry{border:1px solid var(--paper2);border-radius:var(--radius);margin-bottom:1.25rem;overflow:hidden;background:var(--white);}
+  .flag-entry-header{padding:1.1rem 1.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;cursor:pointer;user-select:none;}
+  .flag-entry-header:hover{background:var(--paper);}
+  .flag-entry-left{display:flex;align-items:flex-start;gap:12px;}
+  .flag-entry-badge{font-size:10px;font-weight:500;padding:3px 9px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase;flex-shrink:0;margin-top:2px;}
+  .badge-r{background:var(--red-lt);color:var(--red);}
+  .badge-a{background:var(--amber-lt);color:var(--amber);}
+  .badge-g{background:var(--green-lt);color:var(--green);}
+  .flag-entry-title{font-size:16px;font-weight:500;color:var(--navy);line-height:1.3;}
+  .flag-entry-subtitle{font-size:13px;color:var(--ink3);margin-top:3px;line-height:1.4;}
+  .flag-entry-toggle{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--paper2);display:flex;align-items:center;justify-content:center;transition:background 0.2s,transform 0.2s;margin-top:2px;}
+  .flag-entry.open .flag-entry-toggle{background:var(--teal-lt);transform:rotate(180deg);}
+  .flag-entry-body{display:none;padding:0 1.5rem 1.5rem;border-top:1px solid var(--paper2);}
+  .flag-entry.open .flag-entry-body{display:block;}
+
+  .flag-body-section{margin-top:1.25rem;}
+  .flag-body-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.5rem;}
+  .flag-clause-example{font-size:13px;font-style:italic;color:var(--ink2);background:var(--paper);border-left:3px solid var(--paper3);padding:0.75rem 1rem;border-radius:0 6px 6px 0;line-height:1.6;}
+  .flag-clause-example.cl-r{border-color:var(--red);}
+  .flag-clause-example.cl-a{border-color:var(--amber);}
+  .flag-clause-example.cl-g{border-color:var(--green);}
+  .flag-body-text{font-size:14px;color:var(--ink2);line-height:1.7;margin-top:0.875rem;}
+  .flag-body-text p{margin-bottom:0.75rem;}
+  .flag-body-text p:last-child{margin-bottom:0;}
+  .flag-body-text strong{color:var(--ink);font-weight:500;}
+  .flag-what-good{background:var(--green-lt);border:1px solid var(--green-md);border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;}
+  .flag-what-good-label{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;}
+  .flag-what-good-text{font-size:13px;color:var(--ink2);line-height:1.6;}
+  .flag-ask{background:var(--teal-lt);border:1px solid var(--teal-md);border-radius:8px;padding:1rem 1.25rem;margin-top:0.875rem;}
+  .flag-ask-label{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;}
+  .flag-ask-text{font-size:13px;font-style:italic;color:var(--ink2);line-height:1.6;}
+
+  /* BOTTOM CTA */
+  .library-cta{background:var(--navy);border-radius:14px;padding:3rem;text-align:center;margin-top:2rem;}
+  .library-cta h3{font-family:var(--serif);font-size:26px;color:var(--white);margin-bottom:0.75rem;}
+  .library-cta p{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:2rem;font-weight:300;max-width:480px;margin-left:auto;margin-right:auto;}
+  .btn-cta{background:var(--teal);color:var(--white);padding:15px 32px;border-radius:var(--radius);font-size:16px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s;}
+  .btn-cta:hover{background:var(--teal2);transform:translateY(-1px);}
+
+  @media(max-width:760px){
+    .library-layout{grid-template-columns:1fr;gap:2rem;}
+    .toc{display:none;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="red-flags.html">Red flags</a></li>
+    <li><a href="sample-report.html">Sample report</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Red flags library
+    </div>
+    <div class="section-label">Complete reference guide</div>
+    <h1>The assisted living contract clauses that cost families the most</h1>
+    <p class="page-header-sub">A plain-English explanation of every major red flag, watch item, and negotiable clause found in assisted living contracts — with real examples of problematic language and exactly what to ask for instead.</p>
+    <div class="header-meta">
+      <div class="header-meta-item"><div class="header-meta-dot" style="background:var(--red);"></div> 6 red flags — act before signing</div>
+      <div class="header-meta-item"><div class="header-meta-dot" style="background:var(--amber);"></div> 5 watch items — understand before signing</div>
+      <div class="header-meta-item"><div class="header-meta-dot" style="background:var(--green);"></div> 3 negotiable items — ask before signing</div>
+    </div>
+  </div>
+</div>
+
+<div class="library-layout">
+
+  <!-- TOC -->
+  <aside class="toc">
+    <div class="toc-title">In this guide</div>
+
+    <div class="toc-section">
+      <div class="toc-section-label">Red flags</div>
+      <ul>
+        <li><a href="#rate-escalation"><div class="toc-pip pip-r"></div>Rate escalation</a></li>
+        <li><a href="#arbitration"><div class="toc-pip pip-r"></div>Arbitration waivers</a></li>
+        <li><a href="#discharge"><div class="toc-pip pip-r"></div>Discharge clauses</a></li>
+        <li><a href="#care-level"><div class="toc-pip pip-r"></div>Level of care triggers</a></li>
+        <li><a href="#staffing"><div class="toc-pip pip-r"></div>Staffing misrepresentation</a></li>
+        <li><a href="#hospitalization"><div class="toc-pip pip-r"></div>Hospitalization payment</a></li>
+      </ul>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-section-label">Watch items</div>
+      <ul>
+        <li><a href="#ancillary"><div class="toc-pip pip-a"></div>Ancillary markups</a></li>
+        <li><a href="#medication"><div class="toc-pip pip-a"></div>Medication management</a></li>
+        <li><a href="#community-fee"><div class="toc-pip pip-a"></div>Community fees</a></li>
+        <li><a href="#property"><div class="toc-pip pip-a"></div>Personal property</a></li>
+        <li><a href="#rules"><div class="toc-pip pip-a"></div>Facility rules changes</a></li>
+      </ul>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-section-label">Negotiable items</div>
+      <ul>
+        <li><a href="#rate-cap"><div class="toc-pip pip-g"></div>Rate increase cap</a></li>
+        <li><a href="#bed-hold"><div class="toc-pip pip-g"></div>Bed hold rate</a></li>
+        <li><a href="#rescission"><div class="toc-pip pip-g"></div>Rescission period</a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#get-report" class="toc-cta">
+      Get your report — $99
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="library-content">
+
+    <div class="intro-callout">
+      <p>Assisted living contracts are legal documents written by attorneys who represent the facility. They are designed to protect the facility's interests — not yours. Most families sign them under emotional stress, with little time to review, and no one in their corner.</p>
+      <p>This guide covers every major problem area we see in these contracts. Click any item to expand the full explanation. <strong>If you want a complete analysis of your specific contract, our $99 report does exactly that — clause by clause, in plain English, with a negotiation guide tailored to what we find.</strong></p>
+    </div>
+
+    <!-- RED FLAGS GROUP -->
+    <div class="flag-group">
+      <div class="flag-group-header">
+        <div class="flag-group-pip" style="background:var(--red);"></div>
+        <div class="flag-group-title">Red flags — act before signing</div>
+        <div class="flag-group-count">6 clauses</div>
+      </div>
+
+      <!-- 1. RATE ESCALATION -->
+      <div class="flag-entry open" id="rate-escalation">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Uncapped rate escalation clauses</div>
+              <div class="flag-entry-subtitle">The single most common — and costly — problem in assisted living contracts</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"The Facility reserves the right to adjust the Monthly Service Fee upon thirty (30) days prior written notice. Rate adjustments are not limited in frequency or amount and may occur at any time."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>This clause — or language like it — appears in the majority of assisted living contracts. It means the facility can raise your monthly rate by any amount, as often as they choose, with as little as 30 days notice. There is no cap, no ceiling, no limit.</p>
+            <p>A family paying $4,500/month today could legally be charged $7,000/month within 18 months with no recourse other than moving their parent out. Moving a vulnerable adult — especially one with cognitive decline who has formed relationships and routines — carries real physical and emotional risk. Facilities know this.</p>
+            <p><strong>Why facilities write it this way:</strong> Assisted living is an expensive, labor-intensive business with unpredictable costs. Facilities argue they need flexibility to respond to staffing costs, inflation, and regulatory changes. That argument has some validity — but it doesn't justify unlimited increases. Responsible facilities cap their increases.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">"Annual rate increases shall not exceed the lesser of five percent (5%) or the change in the Consumer Price Index for the applicable metropolitan area, measured over the preceding 12-month period."</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"We'd like to add a written addendum capping annual rate increases at 5% or CPI, whichever is lower. Is that something the facility can accommodate?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ARBITRATION -->
+      <div class="flag-entry" id="arbitration">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Mandatory pre-dispute arbitration waivers</div>
+              <div class="flag-entry-subtitle">Waives your right to sue or join a class action — often buried in an exhibit</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"Any and all disputes, controversies or claims arising out of or relating to this Agreement shall be resolved exclusively by binding arbitration... Resident and Facility expressly waive any right to trial by jury or judge."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>An arbitration clause requires that all disputes — including negligence, abuse, wrongful discharge, and billing fraud — be decided by a private arbitrator rather than a court. You give up the right to a jury trial, the right to appeal in most cases, and the right to join a class action lawsuit.</p>
+            <p><strong>Why this matters in dollar terms:</strong> In December 2024, Sunrise Senior Living settled a class action lawsuit for $18.2 million. The class was defined as residents whose arbitration clauses were either not accepted or were withdrawn within 30 days. Residents who had signed the arbitration waiver without withdrawing it were excluded from the settlement entirely. They received nothing.</p>
+            <p><strong>Where to find it:</strong> Arbitration agreements are often presented as a separate exhibit — Exhibit D, Exhibit A, or similar — attached to the main contract. They may be presented as optional but are frequently slipped in with other signature pages at closing. Read every exhibit carefully.</p>
+            <p><strong>State law variations:</strong> Some states have enacted consumer protections limiting arbitration clauses in assisted living contracts. California, for example, has specific rules around how these agreements must be presented. An elder law attorney in your state can advise on your specific rights.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">Arbitration is offered as a voluntary option that the resident may — but is not required to — agree to. The agreement specifies a 30-day written withdrawal period and explicitly states that declining arbitration will not affect admission or services.</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"We'd like to proceed without signing the arbitration agreement. We understand it may be presented as optional — can you confirm that declining it won't affect our parent's admission or care?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. DISCHARGE -->
+      <div class="flag-entry" id="discharge">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Broad discharge clauses with short notice</div>
+              <div class="flag-entry-subtitle">Vague behavioral standards that give facilities wide latitude to remove residents</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"The Facility may terminate this Agreement upon five (5) days written notice in the event of behaviors determined by Facility management, in its sole discretion, to pose a risk to the safety, well-being, or comfort of other residents or staff."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>Three phrases in this clause should concern you: <strong>"in its sole discretion"</strong> means no outside review is required. <strong>"Well-being or comfort"</strong> sets a vague and easily met threshold. <strong>"Five days"</strong> gives you almost no time to arrange alternative placement.</p>
+            <p>A resident with dementia who becomes agitated, a resident who complains loudly about care quality, a resident whose family is perceived as difficult — all could potentially trigger this clause as written. The facility decides, with no required clinical assessment and no defined appeals process.</p>
+            <p>Finding alternative assisted living placement for a frail adult typically takes weeks to months. Being given 5 days to do so is not realistic, and the stress of sudden relocation is itself a documented health risk for elderly adults.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">Discharge for behavioral reasons requires a written assessment from a licensed clinical professional, a minimum 30-day notice period, a documented internal appeals process, and assistance in locating appropriate alternative placement.</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"We'd like the discharge clause amended to require an independent clinical assessment before any behavioral discharge, a 30-day minimum notice period, and a written appeals process."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. CARE LEVEL -->
+      <div class="flag-entry" id="care-level">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Unilateral level of care increases</div>
+              <div class="flag-entry-subtitle">Facility staff determine — and charge for — higher care tiers without independent review</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"Resident's level of care shall be assessed by Facility nursing staff on a quarterly basis or more frequently as clinically indicated. Level of care tier and associated fees may be adjusted at the Facility's discretion based on assessment findings."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>Assisted living facilities typically charge for care in tiers — Level 1 (minimal assistance) through Level 4 or 5 (extensive care). Each tier carries a different monthly fee, often $500–$1,500 apart. The contract language above means the facility's own staff conducts the assessment that determines which tier — and which fee — applies to your parent.</p>
+            <p>There is an inherent financial incentive here. The facility earns more revenue at higher care tiers. This doesn't mean assessments are dishonest — most are not — but the structure creates a conflict of interest that a well-written contract should address with an independent review mechanism.</p>
+            <p><strong>What to look for:</strong> Does the contract specify who conducts assessments? Is there a process for the family to request a second opinion? Is there a formal appeals process if you disagree with a tier assignment? If the answers to these questions aren't in the contract, ask for them in writing before signing.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">The contract specifies the assessment tool used (e.g., a standardized ADL assessment), gives the family 10 business days to review and respond to any tier change, and provides a formal written process for disputing the finding — including the option to request an assessment by a licensed professional of the family's choosing.</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"If we disagree with a care level assessment, what is the process for requesting an independent review? We'd like that process documented in the agreement as a signed addendum."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. STAFFING -->
+      <div class="flag-entry" id="staffing">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Vague staffing representations</div>
+              <div class="flag-entry-subtitle">Care promises without specific ratios — the basis of the $18.2M Sunrise lawsuit</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"The Facility will provide personalized care services based on each resident's assessed needs. Staffing levels are determined by the Facility based on the aggregate needs of all residents."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>This language sounds reasonable but commits to nothing specific. "Personalized care based on assessed needs" is marketing language, not a binding contractual commitment. "Staffing levels determined by aggregate needs" means the facility decides how many staff to have on any given shift based on its own judgment — not a ratio tied to resident count.</p>
+            <p><strong>The Sunrise precedent:</strong> The class action complaint against Sunrise Senior Living alleged that the company's contracts described personalized care the facilities were not actually staffed to deliver. The court found the plaintiffs had standing to bring claims for elder financial abuse and consumer protection violations based on this disconnect between contractual promise and operational reality. The case settled for $18.2 million in December 2024.</p>
+            <p>Ask for the facility's actual staffing ratios — staff per resident — for each shift. Then ask to see the last 6 months of actual staffing records. If they won't provide them, that tells you something.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">The contract specifies minimum staffing ratios by shift (e.g., one caregiver per eight residents during daytime hours), states that the facility will notify the family if staffing falls below those minimums on a recurring basis, and provides a procedure for families to raise staffing concerns.</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask</div>
+            <div class="flag-ask-text">"Can you share your current staffing ratios by shift, and may we see the actual staffing records from the past 6 months? We'd also like the contract to specify minimum staffing ratios."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. HOSPITALIZATION -->
+      <div class="flag-entry" id="hospitalization">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-r">Red flag</span>
+            <div>
+              <div class="flag-entry-title">Full payment required during hospitalization</div>
+              <div class="flag-entry-subtitle">Many contracts require 100% of monthly rent even during weeks-long hospital stays</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What problematic language looks like</div>
+            <div class="flag-clause-example cl-r">"Resident shall remain financially responsible for the full Monthly Service Fee during any temporary absence from the Facility, including but not limited to hospitalization, rehabilitation, or skilled nursing transfer."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>Hospitalization is common among assisted living residents. A fall, a cardiac event, a pneumonia — any of these can mean weeks in the hospital followed by a stint in a skilled nursing facility for rehabilitation. During that entire period, many contracts require you to continue paying full rent at the assisted living facility to hold your parent's room.</p>
+            <p>The practical reality: a 21-day hospital stay could cost you $3,000–$7,000 in assisted living rent — on top of whatever hospital costs aren't covered by Medicare. Families who haven't read the contract carefully are often blindsided by this.</p>
+            <p><strong>The facility's argument:</strong> They're holding the room, turning away other potential residents, and maintaining the space. That has some legitimacy — but a 50–75% reduced hold rate is a common and reasonable alternative that many facilities will accept.</p>
+          </div>
+          <div class="flag-what-good">
+            <div class="flag-what-good-label">What a fair clause looks like</div>
+            <div class="flag-what-good-text">For hospital stays exceeding 7 consecutive days, the monthly fee is reduced to 60% of the standard rate as a bed hold fee. The full rate resumes upon return. The resident's room and personal belongings are maintained throughout.</div>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"What is your policy for hospital stays? Is there a reduced bed hold rate for stays exceeding 7 days? We'd like that rate documented in the agreement."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WATCH ITEMS GROUP -->
+    <div class="flag-group">
+      <div class="flag-group-header">
+        <div class="flag-group-pip" style="background:var(--amber);"></div>
+        <div class="flag-group-title">Watch items — understand before signing</div>
+        <div class="flag-group-count">5 clauses</div>
+      </div>
+
+      <!-- ANCILLARY -->
+      <div class="flag-entry" id="ancillary">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-a">Watch</span>
+            <div>
+              <div class="flag-entry-title">Ancillary supply markups</div>
+              <div class="flag-entry-subtitle">Medical supplies billed at cost-plus — often without a clear disclosure of the markup rate</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What to look for</div>
+            <div class="flag-clause-example cl-a">"Incontinence products, wound care materials, nutritional supplements, and other medical supplies provided by the Facility shall be billed at the Facility's cost plus fifteen percent (15%)."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>A markup of 10% is generally considered standard in the industry. Markups above 15% are worth pushing back on. More importantly, watch for contracts that don't specify the markup percentage at all — those are the most concerning, because the facility retains unlimited discretion over what they charge.</p>
+            <p>For a resident requiring regular incontinence care and wound management, ancillary supply costs can reach $200–500/month. The difference between a 10% and 20% markup on that spending is $20–50/month — or $240–600/year.</p>
+            <p>Always ask for monthly itemized statements for all ancillary charges, and get that request confirmed in writing before signing.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"We'd like monthly itemized statements for all ancillary charges, and we'd like the markup rate confirmed in writing. Can we also inquire about purchasing some supplies through an outside pharmacy?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEDICATION MANAGEMENT -->
+      <div class="flag-entry" id="medication">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-a">Watch</span>
+            <div>
+              <div class="flag-entry-title">Medication management fees</div>
+              <div class="flag-entry-subtitle">A separate monthly charge — often $75 to $200 — that varies widely and is often negotiable</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-text">
+            <p>Most assisted living contracts charge separately for medication management — the storage, administration, documentation, and coordination of your parent's medications. This is legitimate: medication management is time-intensive for staff and carries significant liability.</p>
+            <p>The range is wide: $75 to $200+ per month. Whether the fee is reasonable depends on how complex your parent's medication regimen is. A resident taking a single daily medication requires far less staff time than one managing 12 medications across multiple daily administration windows.</p>
+            <p>Facilities often apply the same flat fee regardless of complexity. If your parent has a simple medication profile, the fee may be negotiable — particularly to a lower tier or flat rate.</p>
+            <p>Also check whether the contract distinguishes between medication <em>assistance</em> (helping a resident who self-administers) and medication <em>administration</em> (staff directly administering). The former typically warrants a lower fee.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask</div>
+            <div class="flag-ask-text">"Our parent manages most medications independently and only needs assistance with one daily medication. Is there a lower medication management tier that would apply in this situation?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY FEE -->
+      <div class="flag-entry" id="community-fee">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-a">Watch</span>
+            <div>
+              <div class="flag-entry-title">Non-refundable community fees</div>
+              <div class="flag-entry-subtitle">Upfront fees of $500–$5,000 with short refund windows — and they're often negotiable</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-text">
+            <p>Community fees — sometimes called move-in fees or administrative fees — are one-time upfront charges collected at signing. They typically range from $500 to $5,000 and are presented as covering the cost of processing the application, preparing the room, and administrative setup.</p>
+            <p>The key issue is refundability. Most contracts include a 14-day rescission period during which the fee is fully refundable. After that window closes, the fee is typically non-refundable under all circumstances — even if the resident dies before moving in, or if the family decides within week three that the facility isn't the right fit.</p>
+            <p>Fourteen days is a very short window to make a final determination about a $4,000–$7,000/month commitment. Many facilities will extend this to 30 days if asked, particularly for private-pay residents where maintaining the relationship is more valuable than holding the fee.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"We'd like to discuss the community fee — both the amount and the rescission period. Is there flexibility on either? We'd be more comfortable with a 30-day window."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL PROPERTY -->
+      <div class="flag-entry" id="property">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-a">Watch</span>
+            <div>
+              <div class="flag-entry-title">Personal property clauses upon discharge</div>
+              <div class="flag-entry-subtitle">Short windows to retrieve belongings — sometimes as few as 20 days</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What to look for</div>
+            <div class="flag-clause-example cl-a">"If you have not taken your personal property with you upon discharge, the facility will pack up your belongings and safely store them for 20 days. If you or your family have not retrieved them within 20 days of discharge, your property will be disposed of."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>This clause becomes important in two scenarios: a sudden discharge where the family has little time to plan, and death. In both cases, 20 days is a short window — particularly for families who may live out of state or are dealing with grief, probate, or other immediate demands.</p>
+            <p>Note that the contract says belongings will be "disposed of" after the window — not donated, not stored further, disposed. That can mean anything from donation to trash. Ask the facility what their actual disposal process is.</p>
+            <p>Also check whether the facility charges a storage or packing fee for the 20-day holding period. Some do.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask</div>
+            <div class="flag-ask-text">"What is your specific process for handling personal belongings after discharge or death? Is the 20-day window flexible in cases where family lives out of state?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FACILITY RULES -->
+      <div class="flag-entry" id="rules">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-a">Watch</span>
+            <div>
+              <div class="flag-entry-title">Unilateral facility rules changes</div>
+              <div class="flag-entry-subtitle">Many contracts allow the facility to change its rules and policies at any time</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-section">
+            <div class="flag-body-label">What to look for</div>
+            <div class="flag-clause-example cl-a">"You agree to abide by and conform to the rules, regulations, policies and principles as they now exist for the operation and management of the facility and such reasonable amendments to the above as the facility may subsequently adopt."</div>
+          </div>
+          <div class="flag-body-text">
+            <p>This language — which appears in some form in most assisted living contracts — means the facility can change its rules and you've pre-agreed to follow them. Visitation hours, pet policies, guest meal policies, activity schedules, transportation services — any of these could change after your parent has moved in and settled.</p>
+            <p>What you want to see: a requirement that rule changes be communicated in writing with reasonable advance notice, and an acknowledgment that material changes to the resident's daily life or services warrant a conversation with the family before implementation.</p>
+            <p>Ask for a copy of the current resident handbook before signing and keep it on file. If core elements of that handbook change significantly, you'll have documentation of what was originally promised.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">What to ask for</div>
+            <div class="flag-ask-text">"Can we get a copy of the current resident handbook? And can we confirm that any material changes to facility rules or services will be communicated in writing with at least 30 days advance notice?"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEGOTIABLE GROUP -->
+    <div class="flag-group">
+      <div class="flag-group-header">
+        <div class="flag-group-pip" style="background:var(--green);"></div>
+        <div class="flag-group-title">Negotiable items — ask before signing</div>
+        <div class="flag-group-count">3 opportunities</div>
+      </div>
+
+      <!-- RATE CAP -->
+      <div class="flag-entry" id="rate-cap">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-g">Negotiate</span>
+            <div>
+              <div class="flag-entry-title">Annual rate increase cap</div>
+              <div class="flag-entry-subtitle">Many facilities will add a cap by written addendum — especially for private-pay residents</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-text">
+            <p>Even when the base contract contains no rate cap, many facilities will add one by written addendum when asked. The most common formulation: annual increases capped at the lesser of 5% or CPI for the local metropolitan area.</p>
+            <p>Your leverage is highest at the time of signing — before the facility has your business and before your parent has moved in and formed attachments. Use it. The conversation is straightforward and the ask is reasonable. Facilities that refuse outright are telling you something about how they view the relationship.</p>
+            <p>If the facility won't agree to a percentage cap, ask for a minimum notice period — 60 days rather than 30 — and a right to terminate without financial penalty if a rate increase exceeds a specified threshold. That's a fallback that still gives you protection.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">Script</div>
+            <div class="flag-ask-text">"We noticed the agreement doesn't limit annual rate increases. Before we sign, we'd like to discuss adding a written addendum capping increases at 5% per year or CPI, whichever is lower. Is that something you can accommodate?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BED HOLD -->
+      <div class="flag-entry" id="bed-hold">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-g">Negotiate</span>
+            <div>
+              <div class="flag-entry-title">Reduced bed hold rate during hospitalization</div>
+              <div class="flag-entry-subtitle">A 50–75% hold rate during hospital stays is standard at many facilities — and askable</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-text">
+            <p>A bed hold rate is a reduced monthly fee — typically 50–75% of the standard rate — that applies when a resident is temporarily absent due to hospitalization or rehabilitation. The room is held, the resident's belongings remain, and the space is not offered to another resident.</p>
+            <p>Facilities that already have a bed hold policy will offer it without negotiation. Facilities that don't — those requiring 100% payment during any absence — will sometimes add a reduced rate by written addendum when asked. The ask is reasonable and common.</p>
+            <p>Specify in your request: the triggering threshold (typically 7 consecutive days of absence), the reduced rate (negotiate for 50–60%), and the conditions for reversion to full rate upon return.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">Script</div>
+            <div class="flag-ask-text">"The agreement requires full payment during any absence, including hospitalization. We'd like to discuss a reduced bed hold rate — say 60% — for hospital stays exceeding 7 consecutive days. Is that something the facility offers?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESCISSION PERIOD -->
+      <div class="flag-entry" id="rescission">
+        <div class="flag-entry-header" onclick="toggle(this)">
+          <div class="flag-entry-left">
+            <span class="flag-entry-badge badge-g">Negotiate</span>
+            <div>
+              <div class="flag-entry-title">Extended rescission period</div>
+              <div class="flag-entry-subtitle">The 14-day window to change your mind is often extendable to 30 days — just ask</div>
+            </div>
+          </div>
+          <div class="flag-entry-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="flag-entry-body">
+          <div class="flag-body-text">
+            <p>Most contracts include a 14-day rescission period — a window during which you can cancel the agreement and receive a full refund of any money paid, including the community fee. After 14 days, the community fee is typically non-refundable and cancellation may carry financial penalties.</p>
+            <p>Fourteen days is very short for a decision of this magnitude. Two weeks after moving in, your parent is still adjusting, the family is still evaluating, and you may not yet have enough information to know if this was the right choice.</p>
+            <p>A 30-day rescission period is a reasonable ask that many facilities will grant. It costs the facility very little — they're unlikely to fill the room within 30 days regardless — and it gives your family meaningful time to evaluate the placement before the financial commitment becomes truly binding.</p>
+          </div>
+          <div class="flag-ask">
+            <div class="flag-ask-label">Script</div>
+            <div class="flag-ask-text">"We'd feel more comfortable with a 30-day rescission period rather than 14 days. This is a significant decision for our family and we'd like adequate time to evaluate the placement before the community fee becomes non-refundable. Is that something the facility can accommodate?"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="library-cta">
+      <h3>Want us to check your specific contract?</h3>
+      <p>Upload your contract and the facility name. We'll analyze every clause, pull the facility's inspection record, and deliver a complete plain-English report within 30 minutes.</p>
+      <a href="index.html#get-report" class="btn-cta">
+        Get your report — $99
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggle(header) {
+  const entry = header.closest('.flag-entry');
+  entry.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

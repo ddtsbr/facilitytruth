@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequently Asked Questions — FacilityTruth</title>
+<meta name="description" content="Answers to every question about FacilityTruth reports — what's included, how it works, legal positioning, privacy, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
+    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
+    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
+    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
+    --red:#b83232;--red-lt:#fdf0f0;
+    --amber:#c47820;--amber-lt:#fef7ed;
+    --green:#2a7d4a;--green-lt:#edf7f0;--green-md:#b8e0c8;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --radius:10px;
+    --shadow:0 2px 16px rgba(15,39,68,0.07);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--teal);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
+  .nav-cta:hover{background:var(--navy2)!important;color:var(--white)!important;}
+
+  /* HEADER */
+  .page-header{background:var(--paper);border-bottom:1px solid var(--paper2);padding:100px 2.5rem 60px;}
+  .page-header-inner{max-width:700px;margin:0 auto;text-align:center;}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;}
+  .page-header h1{font-family:var(--serif);font-size:clamp(28px,4vw,48px);color:var(--navy);line-height:1.13;letter-spacing:-0.02em;margin-bottom:1rem;}
+  .page-header-sub{font-size:17px;color:var(--ink3);font-weight:300;line-height:1.65;}
+
+  /* LAYOUT */
+  .faq-layout{max-width:1020px;margin:0 auto;padding:3rem 2.5rem 6rem;display:grid;grid-template-columns:200px 1fr;gap:4rem;align-items:start;}
+
+  /* STICKY TOC */
+  .faq-toc{position:sticky;top:90px;}
+  .faq-toc-title{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;}
+  .faq-toc ul{list-style:none;display:flex;flex-direction:column;gap:2px;}
+  .faq-toc a{display:block;font-size:13px;color:var(--ink3);text-decoration:none;padding:5px 10px;border-left:2px solid var(--paper3);transition:color 0.2s,border-color 0.2s,background 0.2s;line-height:1.4;border-radius:0 4px 4px 0;}
+  .faq-toc a:hover{color:var(--navy);border-color:var(--teal);background:var(--paper);}
+  .faq-toc-cta{margin-top:2rem;background:var(--navy);color:var(--white);padding:12px 16px;border-radius:var(--radius);font-size:14px;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:background 0.2s;}
+  .faq-toc-cta:hover{background:var(--navy2);}
+
+  /* FAQ CONTENT */
+  .faq-content{}
+  .faq-group{margin-bottom:3rem;}
+  .faq-group-title{font-family:var(--serif);font-size:22px;color:var(--navy);letter-spacing:-0.01em;margin-bottom:1.25rem;padding-bottom:0.875rem;border-bottom:2px solid var(--paper2);}
+
+  .faq-item{border:1px solid var(--paper2);border-radius:var(--radius);margin-bottom:0.75rem;overflow:hidden;background:var(--white);}
+  .faq-item-header{padding:1.1rem 1.25rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;cursor:pointer;user-select:none;}
+  .faq-item-header:hover{background:var(--paper);}
+  .faq-q{font-size:15px;font-weight:500;color:var(--navy);line-height:1.4;}
+  .faq-toggle{width:24px;height:24px;border-radius:50%;background:var(--paper2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s,transform 0.2s;margin-top:1px;}
+  .faq-item.open .faq-toggle{background:var(--teal-lt);transform:rotate(180deg);}
+  .faq-item-body{display:none;padding:0 1.25rem 1.25rem;border-top:1px solid var(--paper2);}
+  .faq-item.open .faq-item-body{display:block;}
+  .faq-a{font-size:14px;color:var(--ink2);line-height:1.75;padding-top:1rem;}
+  .faq-a p{margin-bottom:0.75rem;}
+  .faq-a p:last-child{margin-bottom:0;}
+  .faq-a strong{color:var(--ink);font-weight:500;}
+  .faq-a a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,124,107,0.25);}
+  .faq-a a:hover{color:var(--teal2);}
+
+  .faq-callout{border-radius:8px;padding:1rem 1.25rem;margin-top:0.875rem;font-size:13px;line-height:1.6;}
+  .callout-green{background:var(--green-lt);border:1px solid var(--green-md);color:var(--ink2);}
+  .callout-teal{background:var(--teal-lt);border:1px solid var(--teal-md);color:var(--ink2);}
+  .callout-amber{background:var(--amber-lt);border:1px solid #f5dba0;color:var(--ink2);}
+  .callout-label{font-weight:500;margin-bottom:3px;}
+  .callout-green .callout-label{color:var(--green);}
+  .callout-teal .callout-label{color:var(--teal);}
+  .callout-amber .callout-label{color:var(--amber);}
+
+  /* STILL HAVE QUESTIONS */
+  .still-questions{background:var(--paper);border-top:1px solid var(--paper2);padding:60px 2.5rem;}
+  .still-questions-inner{max-width:600px;margin:0 auto;text-align:center;}
+  .still-questions h2{font-family:var(--serif);font-size:clamp(22px,3vw,32px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .still-questions p{font-size:16px;color:var(--ink3);font-weight:300;margin-bottom:2rem;line-height:1.65;}
+  .contact-options{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;}
+  .contact-card{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.5rem;text-align:left;}
+  .contact-card-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.5rem;}
+  .contact-card h3{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:0.375rem;}
+  .contact-card p{font-size:13px;color:var(--ink3);line-height:1.5;}
+  .contact-card a{color:var(--teal);text-decoration:none;font-weight:500;font-size:14px;display:block;margin-top:0.75rem;}
+
+  .btn-primary{background:var(--navy);color:var(--white);padding:15px 32px;border-radius:var(--radius);font-size:16px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s;}
+  .btn-primary:hover{background:var(--navy2);transform:translateY(-1px);}
+
+  @media(max-width:700px){
+    .faq-layout{grid-template-columns:1fr;gap:2rem;}
+    .faq-toc{display:none;}
+    .nav-links{display:none;}
+    .contact-options{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="red-flags.html">Red flags</a></li>
+    <li><a href="sample-report.html">Sample report</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label">FAQ</div>
+    <h1>Frequently asked questions</h1>
+    <p class="page-header-sub">Everything you need to know before purchasing — and after. If you don't find your answer here, email us at <a href="mailto:support@facilitytruth.com" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,124,107,0.3);">support@facilitytruth.com</a>.</p>
+  </div>
+</div>
+
+<div class="faq-layout">
+
+  <!-- TOC -->
+  <aside class="faq-toc">
+    <div class="faq-toc-title">Jump to section</div>
+    <ul>
+      <li><a href="#about-report">About the report</a></li>
+      <li><a href="#legal">Legal &amp; advice</a></li>
+      <li><a href="#uploading">Uploading your contract</a></li>
+      <li><a href="#facility-data">Facility data</a></li>
+      <li><a href="#payment">Payment &amp; pricing</a></li>
+      <li><a href="#privacy">Privacy &amp; security</a></li>
+      <li><a href="#after">After you receive it</a></li>
+      <li><a href="#already-signed">Already signed</a></li>
+    </ul>
+    <a href="index.html#get-report" class="faq-toc-cta">
+      Get your report — $99
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </aside>
+
+  <!-- FAQ CONTENT -->
+  <div class="faq-content">
+
+    <!-- ABOUT THE REPORT -->
+    <div class="faq-group" id="about-report">
+      <div class="faq-group-title">About the report</div>
+
+      <div class="faq-item open">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">What exactly is in a FacilityTruth report?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Every report includes six components delivered as a single PDF: a complete clause-by-clause contract analysis with red flags cited by exact article and section number; a Medicare facility rating breakdown including star ratings, staffing ratios, and quality measures; a plain-English summary of the facility's state inspection citation history for the past 36 months (where available); an overall risk score — Low, Moderate, or High; a prioritized negotiation guide with word-for-word scripts for every negotiable item we find; and a next steps summary including when and how to consult an elder law attorney.</p>
+            <p>See our <a href="sample-report.html">full sample report</a> to read exactly what you'll receive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">How long does the report take?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Most reports are delivered within 30 minutes of purchase. You'll receive an immediate confirmation email the moment your payment is processed, so you know your contract has been received and analysis has begun. Longer contracts — those over 30 pages — or very large scanned files may take up to 15 minutes.</p>
+            <p>If your report hasn't arrived within 20 minutes, check your spam folder first. If it's not there, email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> and we'll resolve it immediately.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">How accurate is the analysis?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Our contract analysis is built on a detailed framework developed from review of hundreds of real assisted living contracts — including contracts from the largest national chains and from independent facilities across our ten covered states. The framework identifies specific clause patterns, language structures, and missing provisions that consistently correlate with problems for families.</p>
+            <p>We cite every flagged clause by its exact article and section number so you can verify the analysis yourself by reading that section of your contract. We encourage you to do so.</p>
+            <p>Facility data — star ratings, inspection citations, staffing ratios — comes directly from Medicare's Care Compare database and state health department records. We do not editorialize this data; we summarize and explain it.</p>
+            <div class="faq-callout callout-teal">
+              <div class="callout-label">Important</div>
+              FacilityTruth provides informational analysis, not legal conclusions. Our identification of a clause as a "red flag" reflects patterns we've observed across many contracts — not a legal determination that the clause is unenforceable or actionable in your specific situation. For legal conclusions, consult an elder law attorney.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Does the report cover memory care and skilled nursing contracts?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes. Our contract analysis covers assisted living agreements of all types — standard assisted living, memory care / dementia units, and continuing care retirement community (CCRC) residency agreements. Skilled nursing facility contracts have some differences in structure; our framework covers the overlapping areas and notes where skilled nursing provisions differ from assisted living norms.</p>
+            <p>Memory care contracts in particular warrant careful review because the resident's ability to advocate for themselves is limited by their condition — making family oversight of the contract even more important.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Can I share the report with other family members?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Absolutely. The PDF report is yours to share with anyone involved in the decision — siblings, other family members, a financial advisor, or an elder law attorney. This is often one of the most valuable uses of the report: giving every family member a shared, plain-English understanding of what the contract contains, so family conversations are informed rather than speculative.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LEGAL -->
+    <div class="faq-group" id="legal">
+      <div class="faq-group-title">Legal and advice questions</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Is this legal advice?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>No. FacilityTruth provides informational analysis — not legal advice. There is an important distinction between the two. Legal information explains what contract language means and what patterns we've observed across many similar contracts. Legal advice is when a licensed attorney tells you what your legal rights are, recommends a specific course of action, or represents your interests.</p>
+            <p>We explain contracts. We don't tell you what your legal rights are or what legal action to take. Our reports always note when a situation warrants consulting an elder law attorney — and we tell you how to find one.</p>
+            <div class="faq-callout callout-green">
+              <div class="callout-label">Think of it this way</div>
+              FacilityTruth is like a knowledgeable friend who has read hundreds of these contracts sitting down with you to explain what yours says and what to watch out for. That friend isn't practicing law — and neither are we.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Should I also consult an elder law attorney?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>For many families, the FacilityTruth report is sufficient to understand the contract and negotiate effectively before signing. For higher-stakes situations — large community fees, significant assets at risk, complex care needs, or contracts with multiple serious red flags — a brief consultation with an elder law attorney is money well spent.</p>
+            <p>Our report will tell you directly when we believe the complexity warrants legal counsel. We're not trying to replace attorneys — we're trying to make sure families arrive at that conversation informed, so they use the attorney's time efficiently.</p>
+            <p>To find a qualified elder law attorney in your area, visit the <strong>National Academy of Elder Law Attorneys</strong> directory at <a href="https://www.naela.org" target="_blank" rel="noopener">naela.org</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">How is FacilityTruth different from asking an elder law attorney?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>An elder law attorney provides legal advice, can tell you what your rights are under your state's specific laws, and can represent you in a dispute. A 1-hour attorney consultation typically costs $300–$500 and requires scheduling days or weeks in advance.</p>
+            <p>FacilityTruth provides informational analysis — what the contract language means, what the facility's track record looks like, and what to negotiate — for $99, delivered in 30 minutes. We don't provide legal advice and we don't replace an attorney when one is genuinely needed.</p>
+            <p>The two are complementary, not competing. Many families use FacilityTruth first to understand what they're dealing with, then bring our report to an attorney if the situation warrants it. That approach uses the attorney's time — and your money — more efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Can facilities take action against me for getting a report?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>No. You have every right to have any document you receive explained to you before you sign it. Reviewing a contract with the help of an informational tool — or an attorney, or a knowledgeable friend — is normal and expected. No facility can discriminate against an applicant for seeking to understand what they are being asked to sign.</p>
+            <p>We also do not notify facilities that a report has been requested, and we do not share your information with facilities under any circumstances.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- UPLOADING -->
+    <div class="faq-group" id="uploading">
+      <div class="faq-group-title">Uploading your contract</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">What file formats do you accept?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>We accept PDF files and image files (JPG and PNG). If you have a digital PDF of the contract, upload that directly — it will produce the cleanest results. If you only have a paper contract, scan it using your phone's built-in document scanner (see our <a href="how-it-works.html">How It Works</a> page for step-by-step scanning instructions for both iPhone and Android).</p>
+            <p>We do not currently accept Word documents (.docx) or other file types. If your contract was provided digitally as a Word file, export or print it to PDF before uploading.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">What if my scan quality is poor?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Standard contracts scanned with a smartphone in reasonable lighting process reliably. If a section of the contract is genuinely unreadable — heavily skewed, very low light, or blurred — our system will note that specific section could not be fully analyzed and flag it for your attention.</p>
+            <p>For the best results: lay each page flat on a table, ensure the room is well-lit, and scan using your phone's built-in document scanner rather than the standard camera app. The document scanner mode automatically corrects perspective and enhances contrast.</p>
+            <div class="faq-callout callout-teal">
+              <div class="callout-label">Not sure about your scan quality?</div>
+              Email a sample page to <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> before purchasing and we'll confirm whether it's processable.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Should I upload the full contract including exhibits?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes — upload everything. Exhibits are often where the most important clauses live. The arbitration agreement, for example, is frequently presented as a separate Exhibit D or Exhibit A attached to the main contract. The ancillary fee schedule is usually in an exhibit. The care level tier pricing is often in an exhibit.</p>
+            <p>If your contract was provided as a single multi-page PDF that includes exhibits, upload the whole file. If exhibits were given to you as separate documents, combine them into a single PDF before uploading, or upload them together as multiple image files.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Do I need to remove personal information before uploading?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>No. Upload the contract as-is — redacting information before upload is not necessary and risks removing context that matters for the analysis. Your contract and personal information are never shared with third parties, never used for marketing, and never disclosed to the facility. See our <a href="privacy.html">Privacy Policy</a> for the full details.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FACILITY DATA -->
+    <div class="faq-group" id="facility-data">
+      <div class="faq-group-title">Facility data</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Where does the facility data come from?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Facility ratings and federal data come from Medicare's Care Compare database — the federal government's public record of every Medicare-certified care facility in the country. This includes star ratings, staffing ratios, quality measures, and any federal penalty or payment denial history. The data is updated regularly by the Centers for Medicare and Medicaid Services (CMS).</p>
+            <p>State inspection citation summaries come from each state's health department inspection records, which are published publicly but are difficult for most families to find and read. We retrieve and summarize these reports in plain English.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">What if my facility isn't in the Medicare database?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Some facilities — particularly newer ones or those that don't accept Medicare patients — are not in the Care Compare database. If that's the case for your facility, your report will still include the full contract analysis and any available state inspection data. We'll note clearly that Medicare data wasn't available and explain why.</p>
+            <p>The contract analysis remains fully complete regardless of Medicare database status. The facility track record section will indicate data availability transparently.</p>
+            <div class="faq-callout callout-amber">
+              <div class="callout-label">Worth knowing</div>
+              A facility that doesn't accept Medicare patients is not necessarily a red flag — many high-quality private-pay facilities operate this way. However, it does mean less publicly available regulatory oversight data exists for that facility, which is worth factoring into your evaluation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Which states are covered for inspection data?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>State inspection report summaries are currently available for California, Texas, Florida, New York, Pennsylvania, Illinois, Ohio, Georgia, North Carolina, and Michigan. For all other states, your report will include the full contract analysis and Medicare data, with a clear note explaining that state survey data isn't yet available for your state.</p>
+            <p>We're adding states on an ongoing basis. If your state isn't listed, check back — coverage expands regularly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">How current is the facility data?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Medicare's Care Compare data is updated quarterly by CMS. State inspection records are updated as surveys are completed and published, typically within 30–60 days of the inspection. Your report will note the date the data was retrieved so you know exactly how current it is.</p>
+            <p>For facilities that have undergone very recent ownership changes or where a major incident has occurred in the last 30 days, we recommend checking the facility's state health department page directly for the most current information — our report will provide that link.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="faq-group" id="payment">
+      <div class="faq-group-title">Payment and pricing</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Is this really a one-time payment with no subscription?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes. $99, once, for one report. No subscription, no recurring charges, no account required. We will never charge your card again without your explicit knowledge and consent. Payment is processed by Stripe — we never see or store your card number.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">What is your refund policy?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>If your report is not delivered within 30 minutes of purchase, or if the analysis is materially incomplete due to a technical error on our end, we will refund your payment in full. Email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> and we'll resolve it within one business day.</p>
+            <p>Because the report is a digital deliverable that is generated and delivered immediately, we are not able to offer refunds after the report has been successfully delivered. If you have concerns about the accuracy or completeness of your report, contact us and we'll review it directly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Can I order a report for more than one facility?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes — each report is $99 and covers one facility and one contract. Many families are comparing two or three facilities simultaneously. Ordering reports for each allows you to compare contract quality and facility track records side by side. If you're ordering multiple reports, email us at <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> and we'll arrange a small discount for multi-report purchases.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Is payment secure?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes. Payment is processed entirely by Stripe — one of the world's largest and most trusted payment processors. We never see your full card number, never store payment information, and have no access to your financial data beyond confirmation that payment was successful. Stripe's infrastructure is PCI DSS Level 1 certified — the highest available standard for payment security.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PRIVACY -->
+    <div class="faq-group" id="privacy">
+      <div class="faq-group-title">Privacy and security</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Who sees my contract?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Your contract is processed by our automated analysis system. No human at FacilityTruth reads your contract as part of the standard report process. If you contact us about a concern with your report, a team member may review the relevant section to assist you — but only with your knowledge.</p>
+            <p>Your contract is never shared with the facility, with attorneys, with any third-party service providers for marketing purposes, or with anyone else. We do not sell data. We do not use your contract to train AI models for outside purposes. See our <a href="privacy.html">full Privacy Policy</a> for complete details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Does FacilityTruth contact the facility on my behalf?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Never. We do not contact, notify, or interact with facilities in any way on behalf of customers. We are entirely on the family's side of this transaction. The facility will have no knowledge that a FacilityTruth report was ordered unless you choose to tell them.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">How long do you keep my contract and personal data?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Contract files are retained for 30 days after report delivery to allow for any support requests, then permanently deleted. Your name and email address are retained only as long as necessary for customer support purposes. We do not maintain a marketing database of past customers, and we do not send unsolicited email after your report is delivered.</p>
+            <p>To request deletion of your data at any time, email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> with the subject line "Data deletion request."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AFTER YOU RECEIVE IT -->
+    <div class="faq-group" id="after">
+      <div class="faq-group-title">After you receive the report</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">The report found red flags. What do I do now?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Start with the negotiation guide at the end of your report. It lists every negotiable item in priority order with word-for-word scripts. Most families find that raising these issues calmly and directly with the admissions coordinator — ideally in writing — results in meaningful improvements to the contract before signing.</p>
+            <p>A high risk score doesn't necessarily mean you should walk away from the facility. It means the contract as written needs work before you sign. Many facilities will make reasonable changes when asked — particularly for private-pay residents, where the relationship is valuable to them.</p>
+            <p>For complex situations — multiple serious red flags, large assets at stake, or a facility that refuses all negotiation — the report will tell you when we recommend consulting an elder law attorney, and provide a link to find one through NAELA.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">The facility is refusing to negotiate. What are my options?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>A facility that refuses all reasonable negotiation is telling you something about how they view the family relationship. Flexibility at signing often reflects flexibility in the ongoing relationship — and rigidity does too.</p>
+            <p>Your options are: sign the contract as-is with clear eyes about what you've agreed to; consult an elder law attorney who may be able to advise on specific state-law protections that limit certain clauses regardless of what the contract says; or consider a different facility. We recognize that choice isn't always available, but in competitive markets, a good FacilityTruth report on a competitor's contract may reveal meaningfully better terms elsewhere.</p>
+            <p>Whatever you decide, you'll be deciding with full information rather than signing something you don't understand. That's the point.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">Can I get a report on a second facility to compare?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes — and many families do. Each report is $99. If you're deciding between two or three facilities, ordering reports for each gives you a direct, apples-to-apples comparison of contract quality and facility track records. For multiple reports, email us and we'll arrange a modest discount.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALREADY SIGNED -->
+    <div class="faq-group" id="already-signed">
+      <div class="faq-group-title">Already signed the contract</div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">I already signed. Is a report still useful?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes, for several reasons. Understanding what you've signed means you can anticipate future issues — rate increases, care tier changes, discharge situations — before they arise and respond effectively when they do. If you signed within the past 14 days, you may still be within the rescission period, which your report will identify and explain. If the contract contains an arbitration waiver with a 30-day withdrawal window, that window may still be open.</p>
+            <p>Families who understand their contract are also better positioned to have productive conversations with facility management and to know when something they're being charged isn't actually supported by the contract language.</p>
+            <div class="faq-callout callout-teal">
+              <div class="callout-label">Check your rescission window</div>
+              Most contracts include a 14-day period during which you can cancel and receive a full refund. If you signed recently, your report will identify this window and explain your options clearly.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">My parent is already living at the facility. Can I still order a report?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes. Understanding the contract your parent is living under is always valuable — particularly if you're starting to notice billing discrepancies, receiving notice of a rate increase, disagreeing with a care tier assessment, or concerned about the facility's regulatory record. A report gives you the information you need to have those conversations from an informed position.</p>
+            <p>If you're considering moving your parent to a different facility, a report on the new facility's contract and track record before signing is exactly what FacilityTruth is designed for.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggle(this)">
+          <div class="faq-q">We received a rate increase notice. Can a report help?</div>
+          <div class="faq-toggle"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">
+          <div class="faq-a">
+            <p>Yes. A report on your existing contract will tell you exactly what the contract says about rate increases — what notice is required, whether there are any caps or limitations, and whether the increase you received is consistent with what the facility committed to at signing. That information puts you in a much stronger position in any conversation with the facility.</p>
+            <p>If the rate increase exceeds what the contract allows, or if the required notice period wasn't provided, that's information worth having — and worth discussing with an elder law attorney if the amount is significant.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- STILL HAVE QUESTIONS -->
+<section class="still-questions">
+  <div class="still-questions-inner">
+    <h2>Still have a question?</h2>
+    <p>We're here to help. Reach out before you purchase if you're not sure whether FacilityTruth is right for your situation.</p>
+    <div class="contact-options">
+      <div class="contact-card">
+        <div class="contact-card-label">Email support</div>
+        <h3>Get a direct answer</h3>
+        <p>We respond to all support emails within one business day — usually much faster.</p>
+        <a href="mailto:support@facilitytruth.com">support@facilitytruth.com →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">Before you buy</div>
+        <h3>Not sure if it's right for you?</h3>
+        <p>Email us a question about your specific situation and we'll give you a straight answer.</p>
+        <a href="mailto:support@facilitytruth.com">Ask us first →</a>
+      </div>
+    </div>
+    <a href="index.html#get-report" class="btn-primary">
+      Get your report — $99
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<script>
+function toggle(header) {
+  header.closest('.faq-item').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

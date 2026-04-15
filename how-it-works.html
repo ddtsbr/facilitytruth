@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — FacilityTruth</title>
+<meta name="description" content="How FacilityTruth analyzes your assisted living contract and facility record. Upload your contract, enter the facility name, and receive a complete plain-English report within 30 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
+    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
+    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
+    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
+    --red:#b83232;--red-lt:#fdf0f0;
+    --amber:#c47820;--amber-lt:#fef7ed;
+    --green:#2a7d4a;--green-lt:#edf7f0;--green-md:#b8e0c8;
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --radius:10px;
+    --shadow:0 2px 16px rgba(15,39,68,0.07);
+    --shadow-lg:0 8px 40px rgba(15,39,68,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--teal);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
+  .nav-cta:hover{background:var(--navy2)!important;color:var(--white)!important;}
+
+  /* PAGE HEADER */
+  .page-header{background:var(--paper);border-bottom:1px solid var(--paper2);padding:100px 2.5rem 60px;}
+  .page-header-inner{max-width:760px;margin:0 auto;text-align:center;}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;}
+  .page-header h1{font-family:var(--serif);font-size:clamp(28px,4vw,50px);color:var(--navy);line-height:1.13;letter-spacing:-0.02em;margin-bottom:1rem;}
+  .page-header-sub{font-size:18px;color:var(--ink3);font-weight:300;max-width:540px;margin:0 auto;line-height:1.65;}
+
+  /* TIMELINE */
+  .timeline{background:var(--white);padding:80px 2.5rem;}
+  .timeline-inner{max-width:760px;margin:0 auto;}
+  .timeline-intro{text-align:center;margin-bottom:4rem;}
+  .timeline-intro h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .timeline-intro p{font-size:16px;color:var(--ink3);font-weight:300;max-width:480px;margin:0 auto;}
+
+  .steps{display:flex;flex-direction:column;gap:0;}
+
+  .step{display:grid;grid-template-columns:80px 1fr;gap:0;position:relative;}
+  .step:not(:last-child)::after{content:'';position:absolute;left:39px;top:72px;bottom:0;width:2px;background:var(--paper2);z-index:0;}
+
+  .step-left{display:flex;flex-direction:column;align-items:center;padding-top:6px;position:relative;z-index:1;}
+  .step-num{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;color:var(--white);flex-shrink:0;font-style:italic;}
+  .step-num-1{background:var(--navy);}
+  .step-num-2{background:var(--navy);}
+  .step-num-3{background:var(--teal);}
+  .step-num-4{background:var(--teal);}
+  .step-num-5{background:var(--green);}
+
+  .step-right{padding:0 0 3.5rem 1.5rem;}
+  .step-tag{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;}
+  .tag-you{color:var(--navy);}
+  .tag-us{color:var(--teal);}
+  .tag-done{color:var(--green);}
+  .step-title{font-family:var(--serif);font-size:22px;color:var(--navy);letter-spacing:-0.01em;margin-bottom:0.75rem;line-height:1.2;}
+  .step-body{font-size:15px;color:var(--ink2);line-height:1.7;}
+  .step-body p{margin-bottom:0.75rem;}
+  .step-body p:last-child{margin-bottom:0;}
+  .step-body strong{color:var(--ink);font-weight:500;}
+
+  .step-card{background:var(--paper);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.25rem;margin-top:1.25rem;}
+  .step-card-title{font-size:12px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.75rem;}
+  .step-card-items{display:flex;flex-direction:column;gap:0.5rem;}
+  .step-card-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink2);}
+  .step-card-item-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .icon-check{background:var(--green-lt);}
+  .icon-check svg{stroke:var(--green);}
+  .icon-info{background:var(--teal-lt);}
+  .icon-info svg{stroke:var(--teal);}
+  .icon-warn{background:var(--amber-lt);}
+  .icon-warn svg{stroke:var(--amber);}
+
+  .step-scan-tip{background:var(--teal-lt);border:1px solid var(--teal-md);border-radius:var(--radius);padding:1.25rem;margin-top:1.25rem;}
+  .scan-tip-title{font-size:12px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;}
+  .scan-tip-body{font-size:14px;color:var(--ink2);line-height:1.65;}
+  .scan-tip-steps{margin-top:0.75rem;display:flex;flex-direction:column;gap:0.4rem;}
+  .scan-tip-step{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink2);}
+  .scan-tip-num{width:18px;height:18px;background:var(--teal-md);color:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0;margin-top:2px;}
+
+  /* WHAT'S IN THE REPORT */
+  .report-contents{background:var(--paper);padding:80px 2.5rem;border-top:1px solid var(--paper2);}
+  .report-contents-inner{max-width:900px;margin:0 auto;}
+  .report-contents h2{font-family:var(--serif);font-size:clamp(24px,3vw,38px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;text-align:center;}
+  .report-contents-sub{font-size:16px;color:var(--ink3);font-weight:300;text-align:center;max-width:500px;margin:0 auto 3rem;}
+  .contents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
+  .contents-card{background:var(--white);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.5rem;}
+  .contents-card-num{font-family:var(--serif);font-size:36px;color:var(--paper3);line-height:1;margin-bottom:0.875rem;font-style:italic;}
+  .contents-card h3{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:0.5rem;}
+  .contents-card p{font-size:14px;color:var(--ink3);line-height:1.6;}
+
+  /* TIMING BAND */
+  .timing{background:var(--navy);padding:60px 2.5rem;}
+  .timing-inner{max-width:760px;margin:0 auto;text-align:center;}
+  .timing h2{font-family:var(--serif);font-size:clamp(22px,3vw,34px);color:var(--white);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .timing-sub{font-size:16px;color:rgba(255,255,255,0.5);font-weight:300;margin-bottom:3rem;}
+  .timing-track{display:flex;align-items:center;gap:0;margin-bottom:2.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px;overflow:hidden;}
+  .timing-segment{flex:1;text-align:center;padding:10px 8px;border-radius:100px;transition:background 0.2s;}
+  .timing-segment.active{background:var(--teal);}
+  .timing-segment-label{font-size:12px;font-weight:500;color:rgba(255,255,255,0.5);line-height:1.3;}
+  .timing-segment.active .timing-segment-label{color:var(--white);}
+  .timing-segment-time{font-size:11px;color:rgba(255,255,255,0.3);margin-top:2px;}
+  .timing-segment.active .timing-segment-time{color:rgba(255,255,255,0.7);}
+  .timing-events{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;text-align:left;}
+  .timing-event{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:1rem;}
+  .timing-event-time{font-size:12px;color:var(--teal2);font-weight:500;margin-bottom:4px;}
+  .timing-event-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;}
+
+  /* FAQ PREVIEW */
+  .faq-preview{background:var(--white);padding:80px 2.5rem;border-top:1px solid var(--paper2);}
+  .faq-preview-inner{max-width:760px;margin:0 auto;}
+  .faq-preview h2{font-family:var(--serif);font-size:clamp(22px,3vw,34px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+  .faq-preview-sub{font-size:16px;color:var(--ink3);font-weight:300;margin-bottom:2.5rem;}
+  .faq-items{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;}
+  .faq-item{background:var(--paper);border:1px solid var(--paper2);border-radius:var(--radius);overflow:hidden;}
+  .faq-item-header{padding:1.1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;}
+  .faq-item-header:hover{background:var(--paper2);}
+  .faq-q{font-size:15px;font-weight:500;color:var(--navy);}
+  .faq-toggle{width:22px;height:22px;border-radius:50%;background:var(--paper3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.2s,background 0.2s;}
+  .faq-item.open .faq-toggle{background:var(--teal-lt);transform:rotate(180deg);}
+  .faq-item-body{display:none;padding:0 1.25rem 1.25rem;font-size:14px;color:var(--ink2);line-height:1.7;border-top:1px solid var(--paper2);}
+  .faq-item.open .faq-item-body{display:block;}
+  .text-link{display:inline-flex;align-items:center;gap:5px;color:var(--teal);font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(15,124,107,0.25);padding-bottom:2px;transition:border-color 0.2s,color 0.2s;}
+  .text-link:hover{color:var(--teal2);border-color:var(--teal2);}
+
+  /* BOTTOM CTA */
+  .bottom-cta{background:var(--paper);padding:80px 2.5rem;border-top:1px solid var(--paper2);}
+  .bottom-cta-inner{max-width:600px;margin:0 auto;text-align:center;}
+  .bottom-cta h2{font-family:var(--serif);font-size:clamp(24px,3vw,38px);color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;}
+  .bottom-cta p{font-size:16px;color:var(--ink3);font-weight:300;margin-bottom:2.5rem;line-height:1.65;}
+  .btn-primary{background:var(--navy);color:var(--white);padding:16px 36px;border-radius:var(--radius);font-size:16px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;}
+  .btn-primary:hover{background:var(--navy2);transform:translateY(-1px);}
+  .cta-note{font-size:13px;color:var(--ink3);margin-top:1rem;}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .step{grid-template-columns:60px 1fr;}
+    .step:not(:last-child)::after{left:29px;}
+    .timing-track{flex-direction:column;border-radius:var(--radius);padding:4px;}
+    .timing-segment{border-radius:8px;}
+    .contents-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How it works</a></li>
+    <li><a href="red-flags.html">Red flags</a></li>
+    <li><a href="sample-report.html">Sample report</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label">The process</div>
+    <h1>Simple. Fast. Completely on your side.</h1>
+    <p class="page-header-sub">Upload the contract, enter the facility name, pay once. Your complete plain-English report arrives in your inbox within 30 minutes.</p>
+  </div>
+</div>
+
+<!-- TIMELINE STEPS -->
+<section class="timeline">
+  <div class="timeline-inner">
+
+    <div class="steps">
+
+      <!-- STEP 1 -->
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num step-num-1">1</div>
+        </div>
+        <div class="step-right">
+          <div class="step-tag tag-you">You do this</div>
+          <div class="step-title">Prepare your contract for upload</div>
+          <div class="step-body">
+            <p>You'll need a copy of the assisted living residency agreement — the document the facility has asked you to sign. Most contracts run between 15 and 30 pages. If you have a digital PDF already, you're ready. If you only have a paper copy, scan it using your phone.</p>
+            <p>We accept <strong>PDF files and photos</strong> (JPG or PNG). If uploading photos, one image per page works best. Our system processes both clean digital PDFs and phone-scanned documents.</p>
+          </div>
+          <div class="step-scan-tip">
+            <div class="scan-tip-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6v4M7 5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              How to scan a paper contract with your phone
+            </div>
+            <div class="scan-tip-body">Both iPhone and Android have built-in document scanners that produce clean, searchable PDFs in seconds. No app download required.</div>
+            <div class="scan-tip-steps">
+              <div class="scan-tip-step"><div class="scan-tip-num">i</div><span><strong>iPhone:</strong> Open the Files app → tap the Browse tab → tap the three-dot menu → Scan Documents. Or use Notes app → new note → camera icon → Scan Documents.</span></div>
+              <div class="scan-tip-step"><div class="scan-tip-num">A</div><span><strong>Android:</strong> Open Google Drive → tap the + button → Scan. The Drive scanner automatically flattens pages and creates a multi-page PDF.</span></div>
+              <div class="scan-tip-step">
+                <div class="scan-tip-num" style="background:var(--teal-md);">
+                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span>Scan in a well-lit space and keep the pages flat. Lay each page on a table rather than holding it — this produces significantly cleaner results.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num step-num-2">2</div>
+        </div>
+        <div class="step-right">
+          <div class="step-tag tag-you">You do this</div>
+          <div class="step-title">Complete the intake form and pay</div>
+          <div class="step-body">
+            <p>Our intake form takes about 3 minutes to complete. You'll upload your contract, enter the facility's full name and state, and provide your email address for report delivery. That's all we need.</p>
+            <p>Payment is processed securely through Stripe. We accept all major credit cards. There is no account to create, no subscription to manage, and no recurring charges. You pay $99 once and receive your report.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card-title">What we collect</div>
+            <div class="step-card-items">
+              <div class="step-card-item">
+                <div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>
+                Your name and email address — for report delivery only
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>
+                The facility's full name and state
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>
+                Your contract file (PDF, JPG, or PNG)
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>
+                Payment — $99, processed by Stripe
+              </div>
+            </div>
+          </div>
+          <div class="step-card" style="margin-top:0.75rem;background:var(--red-lt);border-color:#f5c6c6;">
+            <div class="step-card-title" style="color:var(--red);">What we never do</div>
+            <div class="step-card-items">
+              <div class="step-card-item">
+                <div class="step-card-item-icon" style="background:#fde8e8;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2L2 8" stroke="var(--red)" stroke-linecap="round" stroke-width="1.4"/></svg></div>
+                Share your contract or personal information with any third party
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon" style="background:#fde8e8;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2L2 8" stroke="var(--red)" stroke-linecap="round" stroke-width="1.4"/></svg></div>
+                Contact the facility on your behalf
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon" style="background:#fde8e8;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2L2 8" stroke="var(--red)" stroke-linecap="round" stroke-width="1.4"/></svg></div>
+                Store your payment information
+              </div>
+              <div class="step-card-item">
+                <div class="step-card-item-icon" style="background:#fde8e8;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2L2 8" stroke="var(--red)" stroke-linecap="round" stroke-width="1.4"/></svg></div>
+                Charge you again without your knowledge
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num step-num-3">3</div>
+        </div>
+        <div class="step-right">
+          <div class="step-tag tag-us">We do this</div>
+          <div class="step-title">We analyze the contract — every clause</div>
+          <div class="step-body">
+            <p>The moment payment is confirmed, our system begins processing your contract. We extract and read every clause — cross-referencing section numbers and exhibit references — and run the text through our analysis framework built around the specific red flags, watch items, and negotiable clauses most commonly found in assisted living agreements.</p>
+            <p>Each flagged clause is cited by its exact article and section number so you can find it in your contract and verify our analysis yourself. We explain what the clause means, why it matters, and what to ask for — in plain English, without legal jargon.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card-title">What we check in the contract</div>
+            <div class="step-card-items">
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Fee escalation clauses — caps, notice periods, frequency limits</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Arbitration and dispute resolution provisions</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Discharge rights and notice periods</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Level of care assessment and appeal rights</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Ancillary supply and service markups</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Medication management fees and structure</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Community fee amount and refund terms</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Hospitalization and absence payment terms</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Staffing representations and commitments</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-info"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v3M5 3.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>Personal property rights and discharge procedures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num step-num-4">4</div>
+        </div>
+        <div class="step-right">
+          <div class="step-tag tag-us">We do this</div>
+          <div class="step-title">We pull the facility's inspection record</div>
+          <div class="step-body">
+            <p>Simultaneously with the contract analysis, we query Medicare's Care Compare database — the federal government's public record of every Medicare-certified assisted living and nursing facility in the country. We retrieve the facility's star ratings, staffing ratios, health inspection scores, and any penalty or payment denial history.</p>
+            <p>We also pull available state health department inspection reports for your facility, where accessible, and summarize the findings in plain English. State survey reports are the most detailed public record of what actually happens inside a facility day-to-day — but they run 40 to 80 pages of regulatory language. We translate them.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card-title">Facility data we pull</div>
+            <div class="step-card-items">
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Medicare overall star rating (1–5 stars)</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Health inspection sub-rating and citation history</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Staffing ratios vs. state and national averages</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Quality measures sub-rating</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Federal penalty history and payment denials</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>State inspection citations — last 36 months (where available)</div>
+              <div class="step-card-item"><div class="step-card-item-icon icon-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/></svg></div>Ownership information and recent ownership changes</div>
+            </div>
+          </div>
+          <div class="step-card" style="margin-top:0.75rem;background:var(--amber-lt);border-color:#f5dba0;">
+            <div class="step-card-title" style="color:var(--amber);">State availability note</div>
+            <div class="step-card-items">
+              <div class="step-card-item"><div class="step-card-item-icon icon-warn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 4v2M5 7.5v.25" stroke-linecap="round" stroke-width="1.4"/></svg></div>State inspection report data is currently available for CA, TX, FL, NY, PA, IL, OH, GA, NC, and MI. For all other states, your report will include Medicare data only, with a clear notation explaining why.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step">
+        <div class="step-left">
+          <div class="step-num step-num-5">5</div>
+        </div>
+        <div class="step-right">
+          <div class="step-tag tag-done">You receive this</div>
+          <div class="step-title">Your complete report arrives in your inbox</div>
+          <div class="step-body">
+            <p>Within 30 minutes of purchase, your full report arrives as a PDF attached to an email from FacilityTruth. You'll also receive an immediate confirmation email the moment your payment is processed — so you know we've received your contract and the analysis has begun.</p>
+            <p>The report is designed to be read in about 15 minutes. It leads with the most important findings, cites every clause by article and section number, and closes with a prioritized negotiation guide — the specific requests to make before you sign, in the order we recommend making them.</p>
+            <p>The report is yours to keep, share with family members, or bring to a consultation with an elder law attorney.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S IN THE REPORT -->
+<section class="report-contents">
+  <div class="report-contents-inner">
+    <h2>Every report includes</h2>
+    <p class="report-contents-sub">One price. One payment. Everything below in a single PDF delivered within 30 minutes.</p>
+    <div class="contents-grid">
+      <div class="contents-card">
+        <div class="contents-card-num">01</div>
+        <h3>Contract clause analysis</h3>
+        <p>Every clause reviewed, every red flag cited by article and section, explained in plain English with negotiation guidance.</p>
+      </div>
+      <div class="contents-card">
+        <div class="contents-card-num">02</div>
+        <h3>Facility Medicare rating</h3>
+        <p>Star ratings, staffing ratios, and quality measures — with context explaining what the numbers actually mean.</p>
+      </div>
+      <div class="contents-card">
+        <div class="contents-card-num">03</div>
+        <h3>Inspection citation summary</h3>
+        <p>The last 36 months of state health department citations, summarized in plain English by severity and category.</p>
+      </div>
+      <div class="contents-card">
+        <div class="contents-card-num">04</div>
+        <h3>Overall risk score</h3>
+        <p>A clear Low, Moderate, or High rating that combines contract and facility findings into a single summary judgment.</p>
+      </div>
+      <div class="contents-card">
+        <div class="contents-card-num">05</div>
+        <h3>Negotiation guide</h3>
+        <p>Prioritized, word-for-word scripts for every negotiable item we find — in the order we recommend raising them.</p>
+      </div>
+      <div class="contents-card">
+        <div class="contents-card-num">06</div>
+        <h3>Next steps</h3>
+        <p>A plain-English summary of what to do before you sign, including when to consult an elder law attorney and how to find one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMING BAND -->
+<section class="timing">
+  <div class="timing-inner">
+    <h2>From upload to inbox in within 30 minutes</h2>
+    <p class="timing-sub">Here's exactly what happens after you submit your contract.</p>
+    <div class="timing-track">
+      <div class="timing-segment active">
+        <div class="timing-segment-label">Payment confirmed</div>
+        <div class="timing-segment-time">0:00</div>
+      </div>
+      <div class="timing-segment active">
+        <div class="timing-segment-label">Analysis begins</div>
+        <div class="timing-segment-time">0:30</div>
+      </div>
+      <div class="timing-segment active">
+        <div class="timing-segment-label">Data retrieved</div>
+        <div class="timing-segment-time">2:00</div>
+      </div>
+      <div class="timing-segment active">
+        <div class="timing-segment-label">Report built</div>
+        <div class="timing-segment-time">7:00</div>
+      </div>
+      <div class="timing-segment active">
+        <div class="timing-segment-label">Delivered</div>
+        <div class="timing-segment-time">&lt; 30 min</div>
+      </div>
+    </div>
+    <div class="timing-events">
+      <div class="timing-event">
+        <div class="timing-event-time">Immediately</div>
+        <div class="timing-event-desc">Confirmation email sent. Contract received and analysis queued.</div>
+      </div>
+      <div class="timing-event">
+        <div class="timing-event-time">Within 30 seconds</div>
+        <div class="timing-event-desc">Contract text extracted. Medicare and state data queries begin simultaneously.</div>
+      </div>
+      <div class="timing-event">
+        <div class="timing-event-time">2–4 minutes</div>
+        <div class="timing-event-desc">Clause analysis complete. Facility data retrieved and processed.</div>
+      </div>
+      <div class="timing-event">
+        <div class="timing-event-time">Within 30 minutes</div>
+        <div class="timing-event-desc">Full PDF report assembled and delivered to your inbox.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ PREVIEW -->
+<section class="faq-preview">
+  <div class="faq-preview-inner">
+    <h2>Quick answers</h2>
+    <p class="faq-preview-sub">The questions we hear most often before purchase.</p>
+    <div class="faq-items">
+
+      <div class="faq-item open">
+        <div class="faq-item-header" onclick="toggleFaq(this)">
+          <div class="faq-q">Is this legal advice?</div>
+          <div class="faq-toggle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">No. FacilityTruth provides informational analysis — we explain what contract language means and what it has meant for other families in similar situations. We do not tell you what your legal rights are or what legal action to take. For complex situations, we always recommend consulting a qualified elder law attorney. We'll tell you exactly when that's warranted, and point you to a directory to find one.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggleFaq(this)">
+          <div class="faq-q">What if I've already signed the contract?</div>
+          <div class="faq-toggle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">A report is still useful. Understanding what's in a signed contract helps you know your rights, anticipate future issues, and have informed conversations with the facility when problems arise. If you signed within the last 14 days, you may still be within the rescission period — your report will tell you exactly what that means for your specific contract.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggleFaq(this)">
+          <div class="faq-q">What if my facility isn't Medicare-certified?</div>
+          <div class="faq-toggle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">Some smaller or newer facilities are not in the Medicare database. If that's the case, your report will still include the full contract analysis and any available state inspection data — just without the Medicare star rating component. We'll note clearly what data was and wasn't available, and why.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggleFaq(this)">
+          <div class="faq-q">What if my contract is handwritten or hard to read?</div>
+          <div class="faq-toggle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">Standard printed contracts — even phone-scanned ones — process reliably. Heavily handwritten addenda or very poor quality scans may result in partial analysis, in which case your report will note which sections couldn't be read clearly. If you're concerned about quality, email us a sample page before purchasing and we'll tell you whether it's processable.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-item-header" onclick="toggleFaq(this)">
+          <div class="faq-q">My state isn't on your list yet. Can I still order?</div>
+          <div class="faq-toggle"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="faq-item-body">Yes. The contract analysis and Medicare facility data are available nationally. State inspection report summaries are currently available for CA, TX, FL, NY, PA, IL, OH, GA, NC, and MI. If your facility is in another state, your report will include everything except the state survey summary, and we'll note that clearly. More states are added regularly.</div>
+      </div>
+
+    </div>
+    <a href="faq.html" class="text-link">
+      See all frequently asked questions
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>Ready to know what you're signing?</h2>
+    <p>Upload your contract and the facility name. Your complete plain-English report arrives in your inbox within 30 minutes.</p>
+    <a href="index.html#get-report" class="btn-primary">
+      Get your report — $99
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="cta-note">No subscription · No account · Secure payment via Stripe</div>
+  </div>
+</section>
+
+<script>
+function toggleFaq(header) {
+  header.closest('.faq-item').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
