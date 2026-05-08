@@ -1,206 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — FacilityTruth</title>
-<meta name="description" content="FacilityTruth Privacy Policy — plain English. What we collect, how we use it, and your rights.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy:#0f2744;--navy2:#1a3a5c;--teal:#0f7c6b;--teal2:#1a9e8a;
-    --teal-lt:#e8f6f4;--teal-md:#c2ebe5;
-    --ink:#1c1c1a;--ink2:#3d3d3a;--ink3:#717169;
-    --paper:#f9f7f3;--paper2:#eeebe3;--paper3:#e5e1d8;--white:#ffffff;
-    --serif:'Playfair Display',Georgia,serif;
-    --sans:'DM Sans',system-ui,sans-serif;
-    --radius:10px;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;}
-
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper2);padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
-  .nav-logo{font-family:var(--serif);font-size:22px;color:var(--navy);text-decoration:none;letter-spacing:-0.02em;}
-  .nav-logo span{color:var(--teal);}
-  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
-  .nav-links a{color:var(--ink3);text-decoration:none;font-size:14px;transition:color 0.2s;}
-  .nav-links a:hover{color:var(--navy);}
-  .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px!important;border-radius:7px!important;font-weight:500!important;font-size:14px!important;}
-
-  .page-wrap{max-width:680px;margin:0 auto;padding:110px 2.5rem 6rem;}
-
-  .doc-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;}
-  .doc-title{font-family:var(--serif);font-size:clamp(28px,4vw,42px);color:var(--navy);line-height:1.13;letter-spacing:-0.02em;margin-bottom:0.5rem;}
-  .doc-date{font-size:13px;color:var(--ink3);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--paper2);}
-
-  .doc-intro{background:var(--paper);border:1px solid var(--paper2);border-radius:var(--radius);padding:1.5rem;margin-bottom:2.5rem;font-size:15px;color:var(--ink2);line-height:1.75;}
-  .doc-intro strong{color:var(--ink);font-weight:500;}
-
-  h2{font-family:var(--serif);font-size:20px;color:var(--navy);letter-spacing:-0.01em;margin:2.5rem 0 0.875rem;}
-  p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:1rem;}
-  p:last-child{margin-bottom:0;}
-  strong{color:var(--ink);font-weight:500;}
-  a{color:var(--teal);text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  ul{padding-left:1.25rem;margin-bottom:1rem;}
-  li{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:0.4rem;}
-
-  .summary-table{width:100%;border-collapse:collapse;margin:1.5rem 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--paper2);}
-  .summary-table th{background:var(--navy);color:var(--white);font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:10px 16px;text-align:left;}
-  .summary-table td{font-size:14px;color:var(--ink2);padding:10px 16px;border-bottom:1px solid var(--paper2);vertical-align:top;line-height:1.6;}
-  .summary-table tr:last-child td{border-bottom:none;}
-  .summary-table tr:nth-child(even) td{background:var(--paper);}
-
-  .highlight-box{background:var(--teal-lt);border:1px solid var(--teal-md);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;}
-  .highlight-box p{font-size:14px;color:var(--ink2);margin-bottom:0;}
-  .highlight-box strong{color:var(--teal);}
-
-  .doc-footer{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--paper2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  .doc-footer-copy{font-size:13px;color:var(--ink3);}
-  .doc-footer a{font-size:13px;color:var(--teal);}
-
-  @media(max-width:600px){
-    .nav-links{display:none;}
-    .summary-table{font-size:13px;}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — FacilityTruth</title>
+  <meta name="description" content="FacilityTruth Privacy Policy. What we collect, how we handle personal information in your contract, and your rights.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opt,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Facility<span>Truth</span></a>
-  <ul class="nav-links">
-    <li><a href="how-it-works.html">How it works</a></li>
-    <li><a href="sample-report.html">Sample report</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html#get-report" class="nav-cta">Get your report</a></li>
-  </ul>
-</nav>
-
-<div class="page-wrap">
-
-  <div class="doc-eyebrow">Legal</div>
-  <h1 class="doc-title">Privacy Policy</h1>
-  <div class="doc-date">Last updated: April 2026</div>
-
-  <div class="doc-intro">
-    <strong>The short version:</strong> We collect only what we need to deliver your report. We never sell your data, share your contract with third parties, or contact the facility you're evaluating. Your contract file is deleted 30 days after your report is delivered. We don't send marketing email. That's it.
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand">FacilityTruth</a>
+    <nav>
+      <ul>
+        <li><a href="/how-it-works.html">How it works</a></li>
+        <li><a href="/red-flags.html">What we look for</a></li>
+        <li><a href="/sample-report.html">Sample report</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/#get-report" class="cta">Get your report</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <h2>1. Who we are</h2>
-  <p>FacilityTruth is owned and operated by David Thomas. When this policy says "we," "us," or "FacilityTruth," it means David Thomas operating FacilityTruth. Our contact email is <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a>.</p>
+<main>
+  <div class="reading-container">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="text-muted">Last updated: May 2026</p>
 
-  <h2>2. What we collect and why</h2>
-  <p>Here is exactly what we collect when you use FacilityTruth, and why:</p>
+    <div class="callout">
+      <h4>The short version</h4>
+      <p>We collect only what we need to deliver your report. We never sell your data, share your contract with third parties, or contact the facility you're evaluating. Your contract file is permanently deleted within 30 days of report delivery. We don't send marketing email. If you opt in to research consent, your contract is de-identified before being retained for that purpose.</p>
+    </div>
 
-  <table class="summary-table">
-    <thead>
-      <tr>
-        <th>What we collect</th>
-        <th>Why we collect it</th>
-        <th>How long we keep it</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Your name and email address</strong></td>
-        <td>To send you your report and respond to support requests</td>
-        <td>12 months, then deleted</td>
-      </tr>
-      <tr>
-        <td><strong>Your contract file</strong> (PDF, JPG, or PNG)</td>
-        <td>To generate your report. Processed by our automated system only.</td>
-        <td>30 days after report delivery, then permanently deleted</td>
-      </tr>
-      <tr>
-        <td><strong>Facility name and state</strong></td>
-        <td>To retrieve Medicare and state inspection data for your report</td>
-        <td>30 days after report delivery, then deleted</td>
-      </tr>
-      <tr>
-        <td><strong>Payment confirmation</strong></td>
-        <td>To confirm your purchase was successful</td>
-        <td>12 months for accounting purposes</td>
-      </tr>
-      <tr>
-        <td><strong>Basic website analytics</strong></td>
-        <td>To understand how visitors use the site so we can improve it</td>
-        <td>Aggregated, non-identifiable data only</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>1. Who we are</h2>
+    <p>FacilityTruth is owned and operated by David Thomas. When this policy says "we," "us," or "FacilityTruth," it means David Thomas operating FacilityTruth. Our contact email is <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a>.</p>
 
-  <p><strong>We do not collect:</strong> your full payment card number (handled entirely by Stripe), your Social Security number, your parent's medical records, or any information beyond what's listed above.</p>
+    <h2>2. What we collect and why</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>What we collect</th>
+          <th>Why we collect it</th>
+          <th>How long we keep it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Your name and email address</strong></td>
+          <td>To deliver your report and respond to support requests</td>
+          <td>12 months, then deleted</td>
+        </tr>
+        <tr>
+          <td><strong>Your contract file</strong> (PDF, JPG, or PNG)</td>
+          <td>To generate your report. Processed by automated system.</td>
+          <td>30 days after report delivery, then permanently deleted</td>
+        </tr>
+        <tr>
+          <td><strong>Facility name and state</strong></td>
+          <td>To retrieve Medicare and state inspection data for your report</td>
+          <td>30 days after report delivery, then deleted</td>
+        </tr>
+        <tr>
+          <td><strong>Payment confirmation</strong></td>
+          <td>To confirm purchase (we never see or store your card number)</td>
+          <td>12 months for accounting purposes</td>
+        </tr>
+        <tr>
+          <td><strong>De-identified contract</strong> (only if you opt in)</td>
+          <td>Research and pattern recognition to improve future reports</td>
+          <td>Until you request deletion or until removed from research library</td>
+        </tr>
+        <tr>
+          <td><strong>Basic website analytics</strong></td>
+          <td>To understand site usage and improve the service</td>
+          <td>Aggregated, non-identifiable data only</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h2>3. How we use your information</h2>
-  <p>We use the information we collect for exactly three purposes:</p>
-  <ul>
-    <li><strong>To deliver your report.</strong> Your contract is processed by our automated analysis system to generate the PDF report delivered to your email address.</li>
-    <li><strong>To provide customer support.</strong> If you email us with a question or concern, we use your name and email to respond.</li>
-    <li><strong>To improve the service.</strong> Aggregated, non-identifiable usage data helps us understand which parts of the site and which report sections are most useful to families.</li>
-  </ul>
-  <p>We do not use your information for advertising, marketing, or profiling. We do not send unsolicited email after your report is delivered — no newsletters, no promotional messages, nothing.</p>
+    <p><strong>We do not collect:</strong> your full payment card number (handled entirely by Stripe), Social Security numbers, your parent's medical records, or any information beyond what's listed above.</p>
 
-  <h2>4. Who we share your information with</h2>
-  <p>We share your information with no one, with two narrow exceptions:</p>
-  <ul>
-    <li><strong>Stripe</strong> — our payment processor. Stripe receives your payment information to process the transaction. We never see your full card number. Stripe's privacy practices are governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
-    <li><strong>Infrastructure providers</strong> — the technical services that host our website and process reports (Railway, SendGrid). These providers process data on our behalf under strict confidentiality agreements and are not permitted to use your data for their own purposes.</li>
-  </ul>
+    <h2>3. Personal information in your contract</h2>
+    <p>Senior care contracts typically contain personal information about prospective residents and their families — names, addresses, dates of birth, signatures, references to medical evaluations, financial details, and similar identifying information. We treat this information as confidential.</p>
 
-  <div class="highlight-box">
-    <p><strong>We never share your data with:</strong> assisted living facilities, placement agencies, elder law attorneys, data brokers, advertisers, or any other third party. We do not sell data. We do not have affiliate data-sharing arrangements of any kind. Your contract is yours.</p>
+    <p>Specifically:</p>
+    <ul>
+      <li>Your contract is processed by an automated analysis system. <strong>No human at FacilityTruth reads your contract as part of the standard report process.</strong></li>
+      <li>If you contact us about a concern with your report, a team member may review the relevant section to assist you — but only with your knowledge and only to resolve your specific concern.</li>
+      <li>We do not extract, index, or use names, addresses, dates of birth, or other identifying details from your contract for any purpose other than generating your report.</li>
+      <li>Your contract is transmitted and stored using industry-standard encryption.</li>
+      <li>Your contract file is retained for 30 days after report delivery (to allow for support requests), then permanently and irreversibly deleted from our active systems.</li>
+      <li>We do not use your contract to train AI models for outside parties, sell to data companies, or share with any third party for any reason.</li>
+    </ul>
+
+    <h2>4. Optional research consent</h2>
+    <p>At intake, we offer an opt-in feature inviting you to allow a <strong>de-identified version of your contract</strong> to be retained in our research library. The library helps us recognize patterns across many contracts and improve future reports.</p>
+
+    <p><strong>How de-identification works.</strong> If you opt in, our system generates a separate copy of your contract and removes personal identifiers from that copy before retaining it in the research library. Removed identifiers include: prospective resident name, family member names, addresses, dates of birth, contact information, signatures, and any other directly identifying information. The de-identified copy is what enters the research library; your original file is still subject to the 30-day deletion timeline described above.</p>
+
+    <p><strong>Important characteristics of research consent:</strong></p>
+    <ul>
+      <li>Participation is opt-in only. The default is no participation.</li>
+      <li>You receive the same report regardless of your choice. Declining has no effect on price, content, or delivery.</li>
+      <li>You can revoke consent at any time by emailing <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> with the subject "Revoke research consent." Your de-identified contract will be removed from the research library.</li>
+      <li>De-identified contracts in the research library are accessed only by the automated analysis system for pattern recognition. No human reviews them as part of the research process.</li>
+      <li>De-identified contracts are not sold, shared, or made available to any third party.</li>
+    </ul>
+
+    <p><strong>Limits of de-identification.</strong> No de-identification process is perfect. While our system removes identifiers we recognize, we cannot guarantee that a determined party with access to the de-identified data and substantial outside information could not re-identify a contract. The risk is low — the de-identified contracts are not made publicly available and access is restricted to the automated analysis system — but it is not zero. By opting in, you acknowledge this limitation.</p>
+
+    <h2>5. How we use your information</h2>
+    <p>We use the information we collect for three purposes:</p>
+    <ul>
+      <li><strong>To deliver your report.</strong> Your contract is processed by our automated analysis system to generate the PDF report delivered to your email address.</li>
+      <li><strong>To provide customer support.</strong> If you email us with a question or concern, we use your name and email to respond.</li>
+      <li><strong>To improve the service.</strong> Aggregated, non-identifiable usage data, and (only if you opt in) de-identified contracts in the research library, help us improve future reports.</li>
+    </ul>
+    <p>We do not use your information for advertising, marketing, profiling, or any purpose not described in this policy. We do not send unsolicited email after your report is delivered — no newsletters, no promotional messages.</p>
+
+    <h2>6. Who we share your information with</h2>
+    <p>We share your information with no one, with two narrow exceptions:</p>
+    <ul>
+      <li><strong>Stripe</strong> — our payment processor. Stripe receives your payment information to process the transaction. We never see your full card number. Stripe's privacy practices are governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
+      <li><strong>Infrastructure providers</strong> — the technical services that host our website and process reports. These providers process data on our behalf under confidentiality agreements and are not permitted to use your data for their own purposes.</li>
+    </ul>
+
+    <p><strong>We never share your data with:</strong> senior care facilities, placement agencies, elder law attorneys, data brokers, advertisers, or any other third party. We do not sell data. We do not have affiliate data-sharing arrangements of any kind. Your contract is yours.</p>
+
+    <h2>7. State privacy law compliance</h2>
+    <p>We make commercially reasonable efforts to comply with state consumer privacy laws applicable in our service area, including:</p>
+    <ul>
+      <li><strong>California Consumer Privacy Act (CCPA), as amended by CPRA.</strong> California residents have specific rights regarding personal information, including the right to know, the right to delete, and the right to opt out of sale or sharing. We do not sell or share personal information as those terms are defined under California law.</li>
+      <li><strong>New York SHIELD Act.</strong> We implement reasonable administrative, technical, and physical safeguards for the personal information of New York residents.</li>
+      <li><strong>Texas Data Privacy and Security Act.</strong> We provide Texas residents the rights described in Section 11 below and disclose our data practices as required.</li>
+    </ul>
+    <p>To exercise any rights under your state's privacy law, email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> with a description of your request and the state in which you reside.</p>
+
+    <h2>8. Cookies and tracking</h2>
+    <p>FacilityTruth uses minimal, privacy-respecting analytics to understand basic site usage — pages visited, general traffic patterns. We do not use advertising cookies, cross-site tracking, or behavioral profiling. We do not use Google Analytics or Facebook Pixel.</p>
+    <p>If you disable cookies in your browser, all core functionality of the site will continue to work normally.</p>
+
+    <h2>9. Data security</h2>
+    <p>We use industry-standard security practices to protect your information, including encrypted transmission (HTTPS), encrypted storage, and access controls that limit who can access your data within our systems.</p>
+    <p>If we become aware of a data breach that affects your personal information, we will notify you by email within 72 hours of becoming aware of the breach, or sooner if required by applicable state law. The notification will describe what information was affected and what steps we are taking in response.</p>
+    <p>No system is perfectly secure. We take security seriously and review our practices regularly, but cannot guarantee that any data transmitted online is fully secure.</p>
+
+    <h2>10. Your rights</h2>
+    <p>You have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access:</strong> You can request a copy of the personal information we hold about you.</li>
+      <li><strong>Correction:</strong> You can ask us to correct inaccurate information.</li>
+      <li><strong>Deletion:</strong> You can request deletion of your personal information and contract file at any time — even before the 30-day automatic deletion window.</li>
+      <li><strong>Portability:</strong> You can request your data in a portable format.</li>
+      <li><strong>Objection:</strong> You can object to our processing of your information.</li>
+      <li><strong>Revoke research consent:</strong> If you opted in to the research library, you can revoke consent and request deletion of your de-identified contract at any time.</li>
+    </ul>
+    <p>To exercise any of these rights, email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> with the subject line "Privacy request." We will respond within 5 business days, or as required by your state's law if a different timeline applies.</p>
+
+    <h2>11. Children's privacy</h2>
+    <p>FacilityTruth is intended for adults making decisions about care for elderly family members. We do not knowingly collect personal information from anyone under the age of 18. If we become aware that we have inadvertently collected information from a minor, we will delete it.</p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we'll update the date at the top. For material changes, we'll notify customers we have email addresses for. Continued use of FacilityTruth after a policy update constitutes acceptance of the updated policy.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions, concerns, or requests related to this Privacy Policy should be directed to:</p>
+    <p>
+      <strong>David Thomas — FacilityTruth</strong><br>
+      <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a>
+    </p>
+
+    <hr>
+
+    <p class="text-small text-muted">© 2026 FacilityTruth · David Thomas · <a href="/terms.html">Terms of Service →</a></p>
   </div>
+</main>
 
-  <h2>5. Your contract file specifically</h2>
-  <p>We understand that your contract contains sensitive personal and financial information. Here is exactly how we handle it:</p>
-  <ul>
-    <li>Your contract is processed by our automated analysis system — no human at FacilityTruth reads it as part of the standard report process.</li>
-    <li>If you contact us about a concern with your report, a team member may review the relevant section to assist you — but only with your knowledge and only to resolve your specific concern.</li>
-    <li>Your contract file is retained for 30 days after report delivery to allow for any support requests, then permanently and irreversibly deleted.</li>
-    <li>Your contract is transmitted and stored using industry-standard encryption.</li>
-    <li>We do not use your contract to train AI models for outside purposes, sell to data companies, or share with any party for any reason.</li>
-  </ul>
-
-  <h2>6. Cookies and tracking</h2>
-  <p>FacilityTruth uses minimal, privacy-respecting analytics to understand basic site usage — pages visited, general traffic patterns. We do not use advertising cookies, cross-site tracking, or behavioral profiling. We do not use Google Analytics or Facebook Pixel.</p>
-  <p>If you disable cookies in your browser, all core functionality of the site will continue to work normally.</p>
-
-  <h2>7. Data security</h2>
-  <p>We use industry-standard security practices to protect your information, including encrypted transmission (HTTPS), encrypted storage, and access controls that limit who can access your data within our systems. No system is perfectly secure, but we take this seriously and review our security practices regularly.</p>
-  <p>If we ever become aware of a data breach that affects your personal information, we will notify you by email within 72 hours of becoming aware of it.</p>
-
-  <h2>8. Your rights</h2>
-  <p>You have the following rights regarding your personal information:</p>
-  <ul>
-    <li><strong>Access:</strong> You can request a copy of the personal information we hold about you.</li>
-    <li><strong>Correction:</strong> You can ask us to correct inaccurate information.</li>
-    <li><strong>Deletion:</strong> You can request that we delete your personal information and contract file at any time — even before the 30-day automatic deletion window.</li>
-    <li><strong>Portability:</strong> You can request your data in a portable format.</li>
-    <li><strong>Objection:</strong> You can object to our processing of your information.</li>
-  </ul>
-  <p>To exercise any of these rights, email <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a> with the subject line "Privacy request." We will respond within 5 business days.</p>
-
-  <h2>9. Children's privacy</h2>
-  <p>FacilityTruth is intended for adults making decisions about care for elderly family members. We do not knowingly collect personal information from anyone under the age of 18. If we become aware that we have inadvertently collected information from a minor, we will delete it immediately.</p>
-
-  <h2>10. Changes to this policy</h2>
-  <p>We may update this Privacy Policy from time to time. When we do, we'll update the date at the top of this page. For significant changes, we'll notify customers by email if we have your address on file. Continued use of FacilityTruth after a policy update constitutes acceptance of the updated policy.</p>
-
-  <h2>11. Contact us</h2>
-  <p>Questions, concerns, or requests related to this Privacy Policy should be directed to:</p>
-  <p><strong>David Thomas — FacilityTruth</strong><br>
-  <a href="mailto:support@facilitytruth.com">support@facilitytruth.com</a></p>
-  <p>We take privacy questions seriously and will respond promptly.</p>
-
-  <div class="doc-footer">
-    <div class="doc-footer-copy">&copy; 2026 FacilityTruth · David Thomas</div>
-    <a href="terms.html">Terms of Service →</a>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand">FacilityTruth</a>
+        <p class="text-small" style="margin-top: 0.5rem;">Informational reports for families navigating senior care decisions.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/how-it-works.html">How it works</a></li>
+          <li><a href="/sample-report.html">Sample report</a></li>
+          <li><a href="/red-flags.html">What we look for</a></li>
+          <li><a href="/#get-report">Get your report</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="mailto:support@facilitytruth.com">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms.html">Terms of service</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FacilityTruth · All rights reserved</p>
+      <p class="footer-disclaimer">FacilityTruth provides informational reports only. Nothing on this website or in any FacilityTruth report constitutes legal advice, financial advice, or medical advice, and no attorney-client relationship is created. For any legal questions about a senior care contract or your rights, please consult a qualified elder law attorney before signing.</p>
+    </div>
   </div>
-
-</div>
+</footer>
 
 </body>
 </html>
